@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>KOA Rental Home</title>
+        <!-- Favicons -->
+        <link href="img/logo/koa-mascos-icon.ico" rel="icon">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFE66D;
+            --dark: #292F36;
+            --light: #F7FFF7;
+            --soft-pink: #FFD6E0;
+            --soft-blue: #C0FDFF;
+        }
+        
+        body {
+            font-family: 'Baloo 2', cursive;
+            overflow-x: hidden;
+            color: var(--dark);
+            background-color: #f9f9f9;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            color: var(--primary) !important;
+            text-shadow: 2px 2px 0px rgba(255,230,109,0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            text-shadow: 3px 3px 0px rgba(255,230,109,0.4);
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            color: var(--dark) !important;
+            margin: 0 10px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary) !important;
+            transform: translateY(-2px);
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            padding: 120px 0 150px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section:before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23F7FFF7" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23F7FFF7" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23F7FFF7"/></svg>');
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary) !important;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px rgba(255,230,109,0.3);
+            animation: bounceInDown 1s both;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s both 0.3s;
+        }
+        
+        /* Buttons */
+        .btn-koa {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(255,107,107,0.4);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s both 0.6s;
+        }
+        
+        .btn-koa:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(255,107,107,0.6);
+            color: white;
+        }
+        
+        .btn-koa:after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-koa:hover:after {
+            left: 100%;
+        }
+        
+        /* Room Cards */
+        .room-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: white;
+            margin-bottom: 30px;
+        }
+        
+        .room-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .room-img {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .room-card:hover .room-img {
+            transform: scale(1.03);
+        }
+        
+        .room-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent);
+            color: var(--dark);
+            font-weight: 600;
+            padding: 5px 15px;
+            border-radius: 50px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .room-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .room-features li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .room-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        /* Floating elements */
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        .floating-delay-1 {
+            animation-delay: 0.5s;
+        }
+        
+        .floating-delay-2 {
+            animation-delay: 1s;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Bouncing elements */
+        .bouncing {
+            animation: bouncing 2s ease infinite;
+        }
+        
+        @keyframes bouncing {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Pulse animation */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Cute elements */
+        .cute-element {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+        
+        .heart {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .star {
+            color: var(--accent);
+            font-size: 1.2rem;
+        }
+        
+        /* Section Title */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            bottom: -10px;
+            left: 25%;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* Parallax Effect */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .parallax-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            margin: 15px;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .testimonial-card:before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: rgba(0,0,0,0.05);
+            z-index: 0;
+        }
+        
+        .testimonial-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .parallax-section {
+                background-attachment: scroll;
+            }
+        }
+
+        
+    /* Hiệu ứng mới cho phòng */
+    .room-card {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .room-card:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,0.9));
+        z-index: 1;
+        transition: all 0.5s ease;
+    }
+    
+    .room-card:hover:before {
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,0.7));
+    }
+    
+    .room-badge {
+        animation: pulse 2s infinite;
+        z-index: 2;
+    }
+    
+    /* Hiệu ứng nút đặt phòng */
+    .btn-koa {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .btn-koa:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+    
+    .btn-koa:hover:before {
+        left: 100%;
+    }
+    
+    /* Thêm emoji bay quanh phòng */
+    .room-emoji {
+        position: absolute;
+        font-size: 1.2rem;
+        opacity: 0;
+        z-index: 0;
+        animation: floatEmoji 8s linear infinite;
+    }
+    
+    @keyframes floatEmoji {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.7;
+        }
+        90% {
+            opacity: 0.7;
+        }
+        100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Hiệu ứng mới cho tiện nghi */
+    .icon-box {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .icon-box i {
+        transition: all 0.3s ease;
+    }
+    
+    .icon-box:hover i {
+        transform: scale(1.2) rotate(10deg);
+        text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .icon-box:after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: rgba(78, 205, 196, 0.1);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: all 0.3s ease;
+    }
+    
+    .icon-box:hover:after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    /* Hiệu ứng hover cho box tiện nghi */
+    .amenity-box {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .amenity-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    }
+    
+    .amenity-box:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transition: all 0.3s ease;
+    }
+    
+    .amenity-box:hover:before {
+        transform: scaleX(1);
+    }
+    
+    /* Hiệu ứng mới cho parallax */
+    .parallax-section {
+        position: relative;
+    }
+    
+    .parallax-section:after {
+        content: '';
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f9f9f9" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f9f9f9" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f9f9f9"/></svg>');
+        background-size: cover;
+        z-index: 1;
+    }
+    
+    /* Thêm bong bóng bay */
+    .bubble {
+        position: absolute;
+        background: rgba(255,255,255,0.2);
+        border-radius: 50%;
+        animation: floatBubble 15s linear infinite;
+        z-index: 0;
+    }
+    
+    @keyframes floatBubble {
+        0% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.5;
+        }
+        90% {
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(-500px) translateX(100px);
+            opacity: 0;
+        }
+    }
+
+    /* Hiệu ứng mới cho đánh giá */
+    .testimonial-card {
+        position: relative;
+    }
+    
+    .testimonial-card:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50px;
+        height: 50px;
+        background-image: radial-gradient(circle, rgba(255,230,109,0.2) 20%, transparent 60%);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover:after {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    
+    .testimonial-img {
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover .testimonial-img {
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    /* Hiệu ứng sao đánh giá */
+    .text-warning i {
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover .text-warning i {
+        transform: scale(1.2);
+        text-shadow: 0 0 10px rgba(255,193,7,0.5);
+    }
+    
+    /* Hiệu ứng mới cho footer */
+    .footer {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+    }
+    
+    .social-icon {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .social-icon:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+        transform: translateX(-100%);
+        transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover:after {
+        transform: translateX(100%);
+    }
+    
+    /* Hiệu ứng trái tim */
+    .made-with-love {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .made-with-love i {
+        transition: all 0.5s ease;
+    }
+    
+    .made-with-love:hover i {
+        transform: scale(1.5);
+        color: #ff0000 !important;
+        animation: heartbeat 1s infinite;
+    }
+    
+    @keyframes heartbeat {
+        0% { transform: scale(1); }
+        25% { transform: scale(1.1); }
+        50% { transform: scale(1); }
+        75% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    /* koala item  CSS */
+    .koala-service-item {
+        min-height: 340px;
+    }
+    .koala-service-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .koala-service-item:hover .icon-box i {
+        transform: scale(1.2) rotate(10deg);
+        text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .koala-service-item:hover .icon-box:after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .koala-service-item:hover .service-content h4 {
+        color: var(--primary);
+    }
+    .koala-service-item:hover .service-content p {
+        color: var(--dark);
+    }
+    .koala-service-item:hover .service-content a {
+        background-color: var(--primary);
+        color: white;
+    }
+    .koala-service-item:hover .service-content a:hover {
+        background-color: var(--secondary);
+        color: white;
+    }
+    .koala-service-item:hover .service-content a:after {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header position-relative overflow-hidden p-0">
+            <!-- Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+                <div class="container">
+                    <a href="index.html" class="navbar-brand p-0">
+                        <h1 class="display-6 text-primary m-0"><img src="img\logo\koa-logo.png" alt="" class="w-px-50 h-auto rounded-circle"> KOA Rental Home</h1>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto animate__animated animate__fadeInRight">
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://docs.google.com/spreadsheets/d/1j7UPfBQjdzK2sQuUb6xdsI_5znOE2gbcT1cjNWRONZ8/edit?gid=1315949498#gid=1315949498" target="_blank">
+                                    <i class="fas fa-calendar-alt me-2"></i>Check Lịch trống
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#rooms">
+                                    <i class="fas fa-door-open me-2"></i>Phòng
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#quotes">
+                                    <i class="fas fa-question-circle me-2"></i>Câu hỏi thường gặp
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.facebook.com/koarentalhome" target="_blank">
+                                    <i class="fas fa-bookmark me-2"></i>Đặt phòng
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+            <!-- Hero Header Start -->
+            <div class="hero-header overflow-hidden px-5 hero-section">
+                <div class="rotate-img">
+                    <img src="img/sty-1.png" class="img-fluid w-100" alt="">
+                    <div class="rotate-sty-2"></div>
+                </div>
+                <div class="row gy-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                        <h1 class="display-4 text-dark mb-4 wow fadeInUp hero-title" data-wow-delay="0.3s">Homestay nghỉ dưỡng dành cho giới trẻ</h1>
+                        <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Tại KOA Rental Home, chúng tôi không chỉ cung cấp chỗ ở mà còn mang đến trải nghiệm đáng nhớ với dịch vụ chu đáo và không gian ấm áp như nhà.</p>
+                        <a href="https://www.facebook.com/koarentalhome" target="_blank" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Đặt phòng ngay</a>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
+                        <img src="D:\Source\Html template\saas-website-template\img\background\house.png" class="img-fluid w-100 h-100" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Header End -->
+            <div class="overflow-hidden px-5 hero-section main-container animate-left-right">
+                <div class="image-container d-flex flex-row">
+                    <div class="floating-element vinyl-pink" style="top: 50px; left: 50px;"><img src="img/service-icon/bed.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element chill-bliss" style="top: 30px; left: 200px;"><img src="img/service-icon/towerwood.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element console" style="top: 40px; left: 400px;"><img src="img/service-icon/bida.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element film-reel-camera" style="top: 60px; left: 600px;">
+                        <div class="cat-head" style="position: absolute; top: 10px; left: 10px;"></div>
+                    </div>
+                    <div class="floating-element music-note" style="top: 180px; left: 150px;">♫</div>
+                    <div class="floating-element cat-head" style="top: 150px; left: 350px;"></div>
+                    <div class="floating-element dice" style="top: 160px; left: 550px;">🎲</div>
+                    <div class="floating-element feel-bliss" style="top: 150px; left: 750px;"><img src="img/service-icon/music.png" style="width: 100px;" class="h-100"></div>
+                    <div class="floating-element balls" style="top: 250px; left: 80px;"><img src="img/service-icon/noddle.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element d20" style="top: 190px; left: 280px;"><img src="img/service-icon/ps4.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element vhs" style="top: 240px; left: 850px;">KOA Rental Home</div>
+                    <div class="floating-element coffee" style="top: 220px; left: 980px;"><img src="img/service-icon/movie.png" style="width: 80px;" class="h-100"></div>
+                    <div class="floating-element vinyl-beige" style="top: 40px; left: 1050px;"><img src="img/service-icon/board-game-1.png" class="h-100 w-px-50"></div>
+                    <div class="floating-element music-note" style="top: 280px; left: 700px; color: #8c9eff;">♪</div>
+                    <div class="floating-element dot" style="top: 100px; left: 300px;"></div>
+                    <div class="floating-element square" style="top: 80px; left: 500px;"></div>
+                    <div class="floating-element dot" style="top: 200px; left: 600px; background-color: #fdd835;"></div>
+                    <div class="floating-element square" style="top: 260px; left: 450px; background-color: #4db6ac;"></div>
+                </div>
+        </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- About Start -->
+        <div class="container-fluid overflow-hidden py-5"  style="margin-top: 6rem;">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="RotateMoveLeft">
+                            <img src="D:\Source\Html template\saas-website-template\img\background\koala-drive.png" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <h4 class="mb-1 text-primary">KOA ơi mình đi đâu thế?</h4>
+                        <h1 class="display-5 mb-4">Đến chi nhánh Tân Phú cùng KOA nhé</h1>
+                        <p class="mb-4">Cách KOA chỉ 10 phút đi xe, đầy những quán ăn lớn nhỏ xung quanh KOA như Gogi, Sasin, Panda BBQ luôn nhé. Home có không gian thoải mái và có hàng tá dịch vụ tiện ích đang đợi bạn trải nghiệm nhé.
+                        </p>
+                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- About End -->
+
+
+        <!-- Service Start -->
+        <div class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h4 class="mb-1 text-primary">KOA ơi mình làm gì nhỉ?</h4>
+                    <h1 class="display-5 mb-4">Rất nhiều dịch vụ tiện ích thú vị cho bạn trải nghiệm nhé</h1>
+                    <p class="mb-0">KOA không để bạn có thời gian buồn chán khi ở Home nên cái thứ gì cũng có ở đây cả, mình chỉ liệt kê 1 số thôi nhé, các bạn có thể <a href="https://docs.google.com/spreadsheets/d/1j7UPfBQjdzK2sQuUb6xdsI_5znOE2gbcT1cjNWRONZ8/edit?usp=drivesdk" target="_blank">vào đây để xem chi tiết</a> nhé.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-gamepad fa-3x mb-3" style="color: #6DE1D2;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">PS4</h4>
+                                <p class="mb-4">Cùng nhau chơi game với PS4 nhé, có rất nhiều game hay đang chờ bạn trải nghiệm đấy.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-film fa-3x mb-3" style="color: #FFD63A;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">Máy chiếu, tivi </h4>
+                                <p class="mb-4">Còn gì tuyệt hơn khi cùng nhau xem phim trên máy chiếu lớn hay tivi 4K nhỉ? 1 chút bánh nước nữa thì tuyệt cú mèo luôn.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="ri-golf-ball-line fa-3x mb-3" style="color: #FFA955;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">Bida</h4>
+                                <p class="mb-4">Vừa được nghỉ dưỡng mà còn được chơi bida nữa, quá nhiều trải nghiệm trong 1 lần.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="ri-chess-line fa-3x mb-3" style="color: #F75A5A;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">KOA Board game</h4>
+                                <p class="mb-4">Rất nhiều board game đang chờ bạn trải nghiệm đấy, từ cờ tỷ phú đến Uno hay xếp gỗ đều có cả nhé.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="ri-bowl-line fa-3x mb-3" style="color: #6439FF;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">KOA tiện lợi</h4>
+                                <p class="mb-4">Cả 1 quầy tạp hóa nho nhỏ ngay dưới sảnh tiện lợi cho khách sử dụng mà chả phải đi đâu xa, mà còn rẻ như 1 tiệm tạp hóa nữa chớ.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-coffee fa-3x mb-3" style="color: #4F75FF;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">KOA drink</h4>
+                                <p class="mb-4">KOA hợp tác Trà sữa Thắng Lợi để bạn có thể gọi nước free ship ngay ở Home nhé.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="ri-restaurant-line fa-3x mb-3" style="color: #00CCDD;"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">Khu bếp</h4>
+                                <p class="mb-4">Khu vực bếp luôn luôn có sẵn cho nhu cầu ăn uống cơ bản của bạn nhé, nhớ vệ sinh sau khi sử dụng giúp KOA nhe.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="koala-service-item service-item text-center rounded p-4">
+                            <div class="icon-box mb-3">
+                                <i class="fas fa-tree fa-3x mb-3" style="color: var(--primary);"></i>
+                            </div>
+                            <div class="service-content">
+                                <h4 class="mb-4">Ban công</h4>
+                                <p class="mb-4">Nếu bạn có nhu cầu cùng nhau ngắm sao trời hay ngắm hoàng hôn thì ban công là nơi lý tưởng nhất cho bạn rồi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- room list start -->
+        <div id="rooms" class="container-fluid py-5 bg-light">
+                <div class="container">
+                    <h2 class="text-center section-title animate__animated wow lightSpeedIn" style="animation-delay: 0s;">Phòng KOA thế nào nhỉ?</h2>
+                    <p class="text-center mb-5 animate__animated wow lightSpeedIn" style="animation-delay: 0s;">Mỗi phòng tại KOA đều được thiết kế độc đáo mang lại trải nghiệm tuyệt vời</p>
+                    
+                    <div class="row">
+                        <!-- Room KOA 101 -->
+                        <div class="col-lg-4 col-md-6 animate__animated wow lightSpeedIn" data-delay="0.1s">
+                            <div class="room-card" style="transform: translateY(0px);">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="img-fluid room-img" alt="KOA 101">
+                                    <span class="room-badge">Phổ Biến</span>
+                                </div>
+                                <div class="p-4">
+                                    <h3>KOA 101</h3>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="room-price">450.000đ <small>/ đêm</small></span>
+                                        <span><i class="fas fa-user-friends me-1"></i> 2 người</span>
+                                    </div>
+                                    <p>Không gian chìm đắm trong âm nhạc, thư giãn trong không khí du dương</p>
+                                    <ul class="room-features list-unstyled">
+                                        <li>Diện tích: 15m²</li>
+                                        <li>Ban công</li>
+                                        <li>Máy chiếu, Netflix</li>
+                                        <li>Gương toàn thân - Đèn hiệu ứng ánh sáng</li>
+                                        <li>Máy lạnh - Máy quạt</li>
+                                    </ul>
+                                    <a href="https://www.canva.com/design/DAGgr2DribM/HjVwWvvty5EPoHvwNNRYYA/edit" target="_blank" class="btn btn-koa w-100 mt-3">Chi tiết</a>
+                                </div>
+                            <span class="room-emoji" style="left: 32.9336%; top: 23.0422%; animation-delay: 0.321167s;">🧦</span><span class="room-emoji" style="left: 88.9066%; top: 47.8501%; animation-delay: 3.84027s;">🛏️</span><span class="room-emoji" style="left: 61.6926%; top: 81.4228%; animation-delay: 2.06264s;">🏠</span><span class="room-emoji" style="left: 79.2586%; top: 17.117%; animation-delay: 1.20203s;">🎵</span><span class="room-emoji" style="left: 55.417%; top: 54.38%; animation-delay: 3.06505s;">🏠</span></div>
+                        </div>
+                        
+                        <!-- Room 2 -->
+                        <div class="col-lg-4 col-md-6 animate__animated wow lightSpeedIn" data-delay="0.2s">
+                            <div class="room-card" style="transform: translateY(0px);">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="img-fluid room-img" alt="Phòng Deluxe">
+                                    <span class="room-badge">Yêu Thích</span>
+                                </div>
+                                <div class="p-4">
+                                    <h3>KOA 102</h3>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="room-price">450.000đ <small>/ đêm</small></span>
+                                        <span><i class="fas fa-user-friends me-1"></i> 2 người</span>
+                                    </div>
+                                    <p>Nếu bạn thích ngồi chơi game cùng nhau, thì căn phòng này dành cho bạn</p>
+                                    <ul class="room-features list-unstyled">
+                                        <li>Diện tích: 15m²</li>
+                                        <li>Máy chiếu - Netflix</li>
+                                        <li>PS4</li>
+                                        <li>Gương để bàn</li>
+                                        <li>Máy lạnh - Máy quạt</li>
+                                        <li>Đèn hiệu ứng ánh sáng</li>
+                                    </ul>
+                                    <a href="https://www.canva.com/design/DAGgrvF7DTQ/JEhS3r_vuBHGmEM38rDc7A/edit" target="_blank" class="btn btn-koa w-100 mt-3">Chi tiết</a>
+                                </div>
+                            <span class="room-emoji" style="left: 64.4111%; top: 21.8854%; animation-delay: 0.321502s;">🛁</span><span class="room-emoji" style="left: 13.9651%; top: 39.4614%; animation-delay: 3.59566s;">🌟</span><span class="room-emoji" style="left: 78.0716%; top: 24.7733%; animation-delay: 0.624989s;">🌸</span><span class="room-emoji" style="left: 17.1644%; top: 87.989%; animation-delay: 0.50922s;">🎵</span><span class="room-emoji" style="left: 10.3178%; top: 74.325%; animation-delay: 3.04187s;">📚</span></div>
+                        </div>
+                        
+                        <!-- Room 3 -->
+                        <div class="col-lg-4 col-md-6 animate__animated wow lightSpeedIn" data-delay="0.3s">
+                            <div class="room-card" style="transform: translateY(0px);">
+                                <div class="position-relative">
+                                    <img src="https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" class="img-fluid room-img" alt="Phòng Gia Đình">
+                                    <span class="room-badge">Mới</span>
+                                </div>
+                                <div class="p-4">
+                                    <h3>KOA 201</h3>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="room-price">450.000đ <small>/ đêm</small></span>
+                                        <span><i class="fas fa-user-friends me-1"></i> 2 người</span>
+                                    </div>
+                                    <p>Bida gì chưa người đẹp? Vừa đi nghỉ dưỡng vừa bida cùng bạn bè, còn gì bằng?</p>
+                                    <ul class="room-features list-unstyled">
+                                        <li>Diện tích: 15m²</li>
+                                        <li>Tivi - Netflix</li>
+                                        <li>Bida</li>
+                                        <li>Gương toàn thân</li>
+                                        <li>Máy lạnh - Máy quạt</li>
+                                        <li>Đèn hiệu ứng ánh sáng</li>
+                                    </ul>
+                                    <a href="https://www.canva.com/design/DAGgrvFS_kU/ohtILGkct29Gsxux2azNzQ/edit" target="_blank" class="btn btn-koa w-100 mt-3">Chi tiết</a>
+                                </div>
+                            <span class="room-emoji" style="left: 55.8537%; top: 24.8369%; animation-delay: 1.23867s;">🛁</span><span class="room-emoji" style="left: 16.0173%; top: 41.6675%; animation-delay: 3.8548s;">📚</span><span class="room-emoji" style="left: 25.5261%; top: 11.8796%; animation-delay: 3.25664s;">🎵</span><span class="room-emoji" style="left: 25.2872%; top: 33.5319%; animation-delay: 4.03433s;">🌸</span><span class="room-emoji" style="left: 82.2761%; top: 29.1099%; animation-delay: 2.45877s;">🛁</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <!-- room list end -->
+
+
+        <!-- Đánh giá Start -->
+        <div class="container-fluid testimonial py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h4 class="text-primary">Mọi người nghĩ gì?</h4>
+                    <h1 class="display-5 mb-4">Những đánh giá tích cực được KOA tổng hợp lại</h1>
+                </div>
+                <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/1.png' alt=''>">
+                        <div class="testimonial-inner text-center p-5">
+                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                                    <img src="img/avatar/1.png" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Đỗ Cao Đạt</h5>
+                                    <p class="mb-0">KOA 101 - <small>05/05/2025</small></p>
+                                </div>
+                            </div>
+                            <p class="fs-7">Một trải nghiệm tuyệt vời! Homestay sạch sẽ, tiện nghi đầy đủ và chủ nhà cực kỳ thân thiện. Không gian thoáng đãng, yên bình, phù hợp để nghỉ dưỡng. Tôi rất hài lòng và chắc chắn sẽ quay lại!
+                            </p>
+                            <div class="text-center">
+                                <div class="d-flex justify-content-center">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/2.png' alt=''>">
+                        <div class="testimonial-inner text-center p-5">
+                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                                    <img src="img/avatar/2.png" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Bùi Nguyễn Kim Phú</h5>
+                                    <p class="mb-0">KOA 302 - <small>19/05/2025</small></p>
+                                </div>
+                            </div>
+                            <p class="fs-7">Một kỳ nghỉ hoàn hảo! Không gian thoáng đãng, view đẹp, yên tĩnh. Đội ngũ nhân viên chu đáo, đồ ăn ngon. Rất đáng giá!
+                            </p>
+                            <div class="text-center">
+                                <div class="d-flex justify-content-center">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/3.png' alt=''>">
+                        <div class="testimonial-inner text-center p-5">
+                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
+                                    <img src="img/avatar/3.png" class="img-fluid rounded-circle" alt="">
+                                </div>
+                                <div>
+                                    <h5 class="mb-2">Đào Thanh Bảo Trâm</h5>
+                                    <p class="mb-0">KOA 201 - <small>12/04/2025</small></p>
+                                </div>
+                            </div>
+                            <p class="fs-7">Bàn bida hết nước chấm. Dịch vụ tuyệt vời, chủ nhà thân thiện và hỗ trợ tận tình. Tôi cảm thấy như đang ở nhà. Nếu có dịp, tôi nhất định sẽ quay lại!
+                            </p>
+                            <div class="text-center">
+                                <div class="d-flex justify-content-center">
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                    <i class="fas fa-star text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Đánh giá End -->
+
+        <!-- FAQ Start -->
+        <div id="quotes" class="container-fluid FAQ bg-light overflow-hidden py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                       <div class="accordion koa-question" id="accordionExample">
+                            <div class="accordion-item border-0 mb-4">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
+                                        Phòng có camera không?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <h5>KOA hiểu được tâm lý của mình nên là:</h5>
+                                        <p>Home mình hoàn toàn không lắp đặt camera trong phòng đâu ạ.</p>
+                                        <p>Bên mình cũng thường xuyên kiểm tra cam ẩn để đảm bảo an toàn và có sẵn thiết bị để khách tự kiểm tra cho yên tâm nữa nhen ạ.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-4">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Có thể check in muộn, check out trễ được không? 
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <h5>Chuyện là:</h5>
+                                        <p>Home mình hiện không thể thay đổi giờ combo có sẵn, tuy nhiên, bạn hoàn toàn có thể check-in sớm hoặc check-out trễ với một khoản phụ thu nhỏ.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Cách check in tự động như thế nào?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <h5>Vì một số vấn đề bảo mật nên là:</h5>
+                                        <p>Sau khi bạn book phòng thành công, home sẽ gửi mình chi tiết quy trình check-in tự động ạ, bạn yên tâm nhé.</p>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="FAQ-img RotateMoveRight rounded">
+                            <img src="D:\Source\Html template\saas-website-template\img\background\koala-thinking.png" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ End -->
+
+        <!-- Feature Start -->
+        <div class="container-fluid feature overflow-hidden py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h4 class="text-primary">Our Feature</h4>
+                    <h1 class="display-5 mb-4">Important Features For Email Marketing</h1>
+                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center text-center mb-5">
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-envelope fa-5x text-secondary"></i></div>
+                            <div class="feature-content">
+                                <a href="#" class="h4">Email Marketing <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="text-center p-4">
+                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-mail-bulk fa-5x text-secondary"></i></div>
+                            <div class="feature-content">
+                                <a href="#" class="h4">Email Builder <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="text-center rounded p-4">
+                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-sitemap fa-5x text-secondary"></i></div>
+                            <div class="feature-content">
+                                <a href="#" class="h4">Customer Builder <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="text-center rounded p-4">
+                            <div class="d-inline-block rounded bg-light p-4 mb-4"><i class="fas fa-tasks fa-5x text-secondary"></i></div>
+                            <div class="feature-content">
+                                <a href="#" class="h4">Campaign Manager <i class="fa fa-long-arrow-alt-right"></i></a>
+                                <p class="mt-4 mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit.consectetur adipisicing elit
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="my-3">
+                            <a href="#" class="btn btn-primary d-inline rounded-pill px-5 py-3">More Features</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5 pt-5" style="margin-top: 6rem;">
+                    <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="feature-img RotateMoveLeft h-100" style="object-fit: cover;">
+                            <img src="img/features-1.png" class="img-fluid w-100 h-100" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.1s">
+                        <h4 class="text-primary">Fearutes</h4>
+                        <h1 class="display-5 mb-4">Push Your Visitors Into Happy Customers</h1>
+                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit itaque quaerat dicta porro illum, autem, molestias ut animi ab aspernatur dolorum officia nam dolore. Voluptatibus aliquam earum labore atque.
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex">
+                                    <i class="fas fa-newspaper fa-4x text-secondary"></i>
+                                    <div class="d-flex flex-column ms-3">
+                                        <h2 class="mb-0 fw-bold">285</h2>
+                                        <small class="text-dark">Created Projects</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex">
+                                    <i class="fas fa-users fa-4x text-secondary"></i>
+                                    <div class="d-flex flex-column ms-3">
+                                        <h2 class="mb-0 fw-bold">6560</h2>
+                                        <small class="text-dark">Happy Clients</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="my-4">
+                            <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
+
+
+        <!-- Pricing Start -->
+        <div class="container-fluid price py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h4 class="text-primary">Pricing Plan</h4>
+                    <h1 class="display-5 mb-4">Not Sure Which Plan Is For You?</h1>
+                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
+                    </p>
+                </div>
+                <div class="row g-5 justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="price-item bg-light rounded text-center">
+                            <div class="text-center text-dark border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                                <p class="fs-2 fw-bold text-uppercase mb-0">BASIC</p>
+                                <div class="d-flex justify-content-center">
+                                    <strong class="align-self-start">$</strong>
+                                    <p class="mb-0"><span class="display-5">00</span>/mo</p>
+                                </div>                        
+                            </div>
+                            <div class="text-start p-5">
+                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
+                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
+                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
+                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="price-item bg-light rounded text-center">
+                            <div class="pice-item-offer">Popular</div>
+                            <div class="text-center text-primary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                                <p class="fs-2 fw-bold text-uppercase mb-0">Standard</p>
+                                <div class="d-flex justify-content-center">
+                                    <strong class="align-self-start">$</strong>
+                                    <p class="mb-0"><span class="display-5">23</span>/mo</p>
+                                </div>                        
+                            </div>
+                            <div class="text-start p-5">
+                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
+                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
+                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
+                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-4 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="price-item bg-light rounded text-center">
+                            <div class="text-center text-secondary border-bottom d-flex flex-column justify-content-center p-4" style="width: 100%; height: 160px;">
+                                <p class="fs-2 fw-bold text-uppercase mb-0">Premium</p>
+                                <div class="d-flex justify-content-center">
+                                    <strong class="align-self-start">$</strong>
+                                    <p class="mb-0"><span class="display-5">49</span>/mo</p>
+                                </div>                        
+                            </div>
+                            <div class="text-start p-5">
+                                <p><i class="fas fa-check text-success me-1"></i> Limited Acess Library</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Customer Support</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Pre-built Email Templates</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Reporting & Analytics</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Forms & Landing Pages</p>
+                                <p><i class="fas fa-check text-success me-1"></i> A/B Testing</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Email Scheduling</p>
+                                <p><i class="fas fa-check text-success me-1"></i> Automated Customer Journeys</p>
+                                <p><i class="fas fa-times text-danger me-1"></i> Creative Assistant</p>
+                                <p class="mb-4"><i class="fas fa-times text-danger me-1"></i> Role-based Access</p>
+                                <button class="btn btn-light rounded-pill py-2 px-5" type="button">Get Started</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Pricing End -->
+
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <h4 class="text-primary">Our Blog</h4>
+                    <h1 class="display-5 mb-4">Join Us For New Blog</h1>
+                    <p class="mb-0">Dolor sit amet consectetur, adipisicing elit. Ipsam, beatae maxime. Vel animi eveniet doloremque reiciendis soluta iste provident non rerum illum perferendis earum est architecto dolores vitae quia vero quod incidunt culpa corporis, porro doloribus. Voluptates nemo doloremque cum.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-1.png" class="img-fluid w-100" alt="">
+                                <div class="blog-info">
+                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
+                                    <div class="d-flex">
+                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
+                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content text-dark border p-4 ">
+                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
+                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-2.png" class="img-fluid w-100" alt="">
+                                <div class="blog-info">
+                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
+                                    <div class="d-flex">
+                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
+                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content text-dark border p-4 ">
+                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
+                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-3.png" class="img-fluid w-100" alt="">
+                                <div class="blog-info">
+                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
+                                    <div class="d-flex">
+                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
+                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content text-dark border p-4 ">
+                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
+                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <img src="img/blog-4.png" class="img-fluid w-100" alt="">
+                                <div class="blog-info">
+                                    <span><i class="fa fa-clock"></i> Dec 01.2024</span>
+                                    <div class="d-flex">
+                                        <span class="me-3"> 3 <i class="fa fa-heart"></i></span>
+                                        <a href="#" class="text-white">0 <i class="fa fa-comment"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-content text-dark border p-4 ">
+                                <h5 class="mb-4">Dolor, sit amet consectetur adipisicing</h5>
+                                <p class="mb-4">Lorem ipsum dolor sit amet consectur adip sed eiusmod amet consectur adip.</p>
+                                <a class="btn btn-light rounded-pill py-2 px-4" href="#">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-dark mb-4">Company</h4>
+                            <a href=""> Why Mailler?</a>
+                            <a href=""> Our Features</a>
+                            <a href=""> Our Portfolio</a>
+                            <a href=""> About Us</a>
+                            <a href=""> Our Blog & News</a>
+                            <a href=""> Get In Touch</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-dark">Quick Links</h4>
+                            <a href=""> About Us</a>
+                            <a href=""> Contact Us</a>
+                            <a href=""> Privacy Policy</a>
+                            <a href=""> Terms & Conditions</a>
+                            <a href=""> Our Blog & News</a>
+                            <a href=""> Our Team</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-dark">Services</h4>
+                            <a href=""> All Services</a>
+                            <a href=""> Promotional Emails</a>
+                            <a href=""> Product Updates</a>
+                            <a href=""> Email Marketing</a>
+                            <a href=""> Acquistion Emails</a>
+                            <a href=""> Retention Emails</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-dark">Contact Info</h4>
+                            <a href=""><i class="fa fa-map-marker-alt me-2"></i> 123 Street, New York, USA</a>
+                            <a href=""><i class="fas fa-envelope me-2"></i> info@example.com</a>
+                            <a href=""><i class="fas fa-phone me-2"></i> +012 345 67890</a>
+                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +012 345 67890</a>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-share fa-2x text-secondary me-2"></i>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn-square btn btn-primary rounded-circle mx-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-md-0">
+                        <span class="text-white"><a href="https://www.facebook.com/koarentalhome" target="_blank"><i class="fas fa-copyright text-light me-2"></i>KOA Rental Home</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    
+    <script>
+        // Add scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Animate elements when they come into view
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.animate__animated');
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        const delay = element.getAttribute('data-delay') || '0';
+                        element.style.animationDelay = delay + 's';
+                        element.classList.add('animate__fadeInUp');
+                    }
+                });
+            };
+            
+            // Initial check
+            animateOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Back to top button
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.style.display = 'flex';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Add random floating elements
+            const heroSection = document.querySelector('.hero-section');
+            const emojis = ['🌸', '🌟', '🌈', '🍄', '🧸', '🎈', '🎀', '🐇', '🦄', '🍬', '🎠', '🌼', '🍡', '🎂'];
+            
+            for (let i = 0; i < 12; i++) {
+                const element = document.createElement('div');
+                element.className = 'cute-element';
+                element.style.top = `${Math.random() * 80 + 10}%`;
+                element.style.left = `${Math.random() * 80 + 10}%`;
+                element.style.fontSize = `${Math.random() * 1 + 1}rem`;
+                element.style.opacity = `${Math.random() * 0.5 + 0.3}`;
+                element.style.animationDelay = `${Math.random() * 2}s`;
+                
+                const emoji = document.createElement('span');
+                emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                emoji.style.animation = `floating ${3 + Math.random() * 2}s ease-in-out infinite`;
+                
+                element.appendChild(emoji);
+                heroSection.appendChild(element);
+            }
+            
+            // Add hover effect to room cards
+            const roomCards = document.querySelectorAll('.room-card');
+            roomCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+
+    // Thêm emoji bay quanh phòng
+    document.querySelectorAll('.room-card').forEach((card, index) => {
+        const emojis = ['🌟', '✨', '🌸', '🏠', '🛏️', '🛁', '🍵', '🧦', '📚', '🎵'];
+        for (let i = 0; i < 5; i++) {
+            const emoji = document.createElement('span');
+            emoji.className = 'room-emoji';
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.left = `${Math.random() * 80 + 10}%`;
+            emoji.style.top = `${Math.random() * 80 + 10}%`;
+            emoji.style.animationDelay = `${Math.random() * 5}s`;
+            card.appendChild(emoji);
+        }
+    });
+
+    // Thêm bong bóng bay cho parallax
+    const parallax = document.querySelector('.parallax-section');
+    for (let i = 0; i < 10; i++) {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const size = Math.random() * 30 + 10;
+        bubble.style.width = `${size}px`;
+        bubble.style.height = `${size}px`;
+        bubble.style.left = `${Math.random() * 100}%`;
+        bubble.style.bottom = `-${size}px`;
+        bubble.style.animationDelay = `${Math.random() * 10}s`;
+        parallax.appendChild(bubble);
+    }
+    </script>
+    </body>
+
+</html>
