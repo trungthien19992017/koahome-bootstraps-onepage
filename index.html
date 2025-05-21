@@ -13,7 +13,7 @@
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Manrope:wght@200..800&family=Playwrite+VN:wght@100..400&family=Quicksand:wght@300..700&family=Space+Grotesk:wght@339&display=swap" rel="stylesheet">
 
         <!-- Icon Font Stylesheet -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
@@ -43,7 +43,7 @@
         }
         
         body {
-            font-family: UGFcmljahhbmQtUmVndWxhcidGY;
+            font-family: "Space Grotesk", sans-serif !important;
             overflow-x: hidden;
             color: var(--dark);
             background-color: #f9f9f9;
@@ -525,48 +525,29 @@
     .amenity-box:hover:before {
         transform: scaleX(1);
     }
-    
-    /* Hiệu ứng mới cho parallax */
-    .parallax-section {
+    /* Hiệu ứng mới cho câu hỏi thường gặp */
+    .faq-card {
         position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
     }
-    
-    .parallax-section:after {
+    .faq-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    }
+    .faq-card:before {
         content: '';
         position: absolute;
-        bottom: -20px;
+        bottom: 0;
         left: 0;
         width: 100%;
-        height: 40px;
-        background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f9f9f9" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f9f9f9" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f9f9f9"/></svg>');
-        background-size: cover;
-        z-index: 1;
+        height: 3px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        transform: scaleX(0);
+        transition: all 0.3s ease;
     }
-    
-    /* Thêm bong bóng bay */
-    .bubble {
-        position: absolute;
-        background: rgba(255,255,255,0.2);
-        border-radius: 50%;
-        animation: floatBubble 15s linear infinite;
-        z-index: 0;
-    }
-    
-    @keyframes floatBubble {
-        0% {
-            transform: translateY(0) translateX(0);
-            opacity: 0;
-        }
-        10% {
-            opacity: 0.5;
-        }
-        90% {
-            opacity: 0.5;
-        }
-        100% {
-            transform: translateY(-500px) translateX(100px);
-            opacity: 0;
-        }
+    .faq-card:hover:before {
+        transform: scaleX(1);
     }
 
     /* Hiệu ứng mới cho đánh giá */
@@ -704,10 +685,81 @@
         transform: translate(-50%, -50%) scale(1);
     }
 
+    .FAQ {
+        background: linear-gradient(to bottom, #f8f0e3 0%, #f8f0e3 30%, #dbe6ed 30%, #dbe6ed 70%, #f8f0e3 70%, #f8f0e3 100%); /*Nền 3 lớp màu */
+    }
+    
+    /* Thêm vào phần CSS */
+    .koa-floating-img {
+        position: absolute;
+        width: 80px;
+        height: auto;
+        z-index: 0;
+        opacity: 0.7;
+        animation: butterflyFloat 20s infinite ease-in-out;
+        filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
+        transition: transform 0.2s ease;
+    }
+
+    /* Dùng transform đơn thay cho animation khi hover */
+    .koa-floating-img:hover {
+        transform: scale(1.2) translateY(-10px); /* chỉ thay đổi nhỏ */
+        filter: drop-shadow(0 0 12px var(--primary));
+        z-index: 1;
+    }   
+
+    @keyframes butterflyFloat {
+        0%, 100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(120px, 80px) rotate(10deg);
+        }
+        50% {
+            transform: translate(40px, 120px) rotate(-5deg);
+        }
+        75% {
+            transform: translate(-60px, 45px) rotate(5deg);
+        }
+    }
+
+    @keyframes happyJump {
+        0% { transform: scale(1) translateY(0); }
+        30% { transform: scale(1.2) translateY(-40px); }
+        60% { transform: scale(1.1) translateY(-20px); }
+        100% { transform: scale(1) translateY(0); }
+    }
+
+    .jump-on-click {
+        animation: happyJump 0.8s ease;
+    }
+
+    .service {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .koala-on-title {
+        position: absolute;
+        top: -60px;     /* canh vị trí nằm trên chữ */
+        left: 305px;    /* lệch trái */
+        width: 100px;
+        height: auto;
+        z-index: 2;
+        animation: koalaFloat 6s infinite ease-in-out;
+    }
+
+    @keyframes koalaFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
     </style>
     </head>
 
     <body>
+        
+        <div class="snow-container"></div> 
 
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -766,7 +818,10 @@
                 </div>
                 <div class="row gy-5 align-items-center">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
-                        <h1 class="display-4 text-dark mb-4 wow fadeInUp hero-title" data-wow-delay="0.3s">Homestay nghỉ dưỡng dành cho giới trẻ</h1>
+                        <h1 class="display-4 text-dark mb-4 wow fadeInUp hero-title position-relative d-inline-block" data-wow-delay="0.3s">
+                            Homestay nghỉ dưỡng dành cho giới trẻ
+                            <img src="img/icon/koa-lie.png" alt="Koala" class="koala-on-title">
+                        </h1>
                         <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Tại KOA Rental Home, chúng tôi không chỉ cung cấp chỗ ở mà còn mang đến trải nghiệm đáng nhớ với dịch vụ chu đáo và không gian ấm áp như nhà.</p>
                         <a href="https://www.facebook.com/koarentalhome" target="_blank" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Đặt phòng ngay</a>
                     </div>
@@ -805,21 +860,19 @@
 
 
         <!-- About Start -->
-        <div class="container-fluid overflow-hidden py-5"  style="margin-top: 6rem;">
-            <div class="container py-5">
-                <div class="row g-5">
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="RotateMoveLeft">
-                            <img src="img\background\koala-drive.png" class="img-fluid w-100" alt="">
-                        </div>
+        <div class="container-fluid overflow-hidden koa-where py-5">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="RotateMoveLeft">
+                        <img src="img\background\koala-drive.png" class="img-fluid w-100" alt="">
                     </div>
-                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                        <h4 class="mb-1 text-primary">KOA ơi mình đi đâu thế?</h4>
-                        <h1 class="display-5 mb-4">Đến chi nhánh Tân Phú cùng KOA nhé</h1>
-                        <p class="mb-4">Cách KOA chỉ 10 phút đi xe, đầy những quán ăn lớn nhỏ xung quanh KOA như Gogi, Sasin, Panda BBQ luôn nhé. Home có không gian thoải mái và có hàng tá dịch vụ tiện ích đang đợi bạn trải nghiệm nhé.
-                        </p>
-                        <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Tìm hiểu thêm</a>
-                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h4 class="mb-1 text-primary">KOA ơi mình đi đâu thế?</h4>
+                    <h1 class="display-5 mb-4">Đến chi nhánh Tân Phú cùng KOA nhé</h1>
+                    <p class="mb-4">Cách KOA chỉ 10 phút đi xe, đầy những quán ăn lớn nhỏ xung quanh KOA như Gogi, Sasin, Panda BBQ luôn nhé. Home có không gian thoải mái và có hàng tá dịch vụ tiện ích đang đợi bạn trải nghiệm nhé.
+                    </p>
+                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5">Tìm hiểu thêm</a>
                 </div>
             </div>
         </div>
@@ -828,108 +881,106 @@
 
         <!-- Service Start -->
         <div class="container-fluid service py-5">
-            <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="mb-1 text-primary">KOA ơi mình làm gì nhỉ?</h4>
-                    <h1 class="display-5 mb-4">Rất nhiều dịch vụ tiện ích thú vị cho bạn trải nghiệm nhé</h1>
-                    <p class="mb-0">KOA không để bạn có thời gian buồn chán khi ở Home nên cái thứ gì cũng có ở đây cả, mình chỉ liệt kê 1 số thôi nhé, các bạn có thể <a href="https://docs.google.com/spreadsheets/d/1j7UPfBQjdzK2sQuUb6xdsI_5znOE2gbcT1cjNWRONZ8/edit?usp=drivesdk" target="_blank">vào đây để xem chi tiết</a> nhé.
-                    </p>
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                <h4 class="mb-1 text-primary">KOA ơi mình làm gì nhỉ?</h4>
+                <h1 class="display-5 mb-4">Rất nhiều dịch vụ tiện ích thú vị cho bạn trải nghiệm nhé</h1>
+                <p class="mb-0">KOA không để bạn có thời gian buồn chán khi ở Home nên cái thứ gì cũng có ở đây cả, mình chỉ liệt kê 1 số thôi nhé, các bạn có thể <a href="https://docs.google.com/spreadsheets/d/1j7UPfBQjdzK2sQuUb6xdsI_5znOE2gbcT1cjNWRONZ8/edit?usp=drivesdk" target="_blank">vào đây để xem chi tiết</a> nhé.
+                </p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-gamepad fa-3x mb-3" style="color: #6DE1D2;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">PS4</h4>
+                            <p class="mb-4">Cùng nhau chơi game với PS4 nhé, có rất nhiều game hay đang chờ bạn trải nghiệm đấy.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-gamepad fa-3x mb-3" style="color: #6DE1D2;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">PS4</h4>
-                                <p class="mb-4">Cùng nhau chơi game với PS4 nhé, có rất nhiều game hay đang chờ bạn trải nghiệm đấy.
-                                </p>
-                            </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-film fa-3x mb-3" style="color: #FFD63A;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">Máy chiếu, tivi </h4>
+                            <p class="mb-4">Còn gì tuyệt hơn khi cùng nhau xem phim trên máy chiếu lớn hay tivi 4K nhỉ? 1 chút bánh nước nữa thì tuyệt cú mèo luôn.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-film fa-3x mb-3" style="color: #FFD63A;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Máy chiếu, tivi </h4>
-                                <p class="mb-4">Còn gì tuyệt hơn khi cùng nhau xem phim trên máy chiếu lớn hay tivi 4K nhỉ? 1 chút bánh nước nữa thì tuyệt cú mèo luôn.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="ri-golf-ball-line fa-3x mb-3" style="color: #FFA955;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">Bida</h4>
+                            <p class="mb-4">Vừa được nghỉ dưỡng mà còn được chơi bida nữa, quá nhiều trải nghiệm trong 1 lần.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="ri-golf-ball-line fa-3x mb-3" style="color: #FFA955;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Bida</h4>
-                                <p class="mb-4">Vừa được nghỉ dưỡng mà còn được chơi bida nữa, quá nhiều trải nghiệm trong 1 lần.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="ri-chess-line fa-3x mb-3" style="color: #F75A5A;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">KOA Board game</h4>
+                            <p class="mb-4">Rất nhiều board game đang chờ bạn trải nghiệm đấy, từ cờ tỷ phú đến Uno hay xếp gỗ đều có cả nhé.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="ri-chess-line fa-3x mb-3" style="color: #F75A5A;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">KOA Board game</h4>
-                                <p class="mb-4">Rất nhiều board game đang chờ bạn trải nghiệm đấy, từ cờ tỷ phú đến Uno hay xếp gỗ đều có cả nhé.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="ri-bowl-line fa-3x mb-3" style="color: #6439FF;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">KOA tiện lợi</h4>
+                            <p class="mb-4">Cả 1 quầy tạp hóa nho nhỏ ngay dưới sảnh tiện lợi cho khách sử dụng mà chả phải đi đâu xa, mà còn rẻ như 1 tiệm tạp hóa nữa chớ.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="ri-bowl-line fa-3x mb-3" style="color: #6439FF;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">KOA tiện lợi</h4>
-                                <p class="mb-4">Cả 1 quầy tạp hóa nho nhỏ ngay dưới sảnh tiện lợi cho khách sử dụng mà chả phải đi đâu xa, mà còn rẻ như 1 tiệm tạp hóa nữa chớ.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-coffee fa-3x mb-3" style="color: #4F75FF;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">KOA drink</h4>
+                            <p class="mb-4">KOA hợp tác Trà sữa Thắng Lợi để bạn có thể gọi nước free ship ngay ở Home nhé.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-coffee fa-3x mb-3" style="color: #4F75FF;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">KOA drink</h4>
-                                <p class="mb-4">KOA hợp tác Trà sữa Thắng Lợi để bạn có thể gọi nước free ship ngay ở Home nhé.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="ri-restaurant-line fa-3x mb-3" style="color: #00CCDD;"></i>
+                        </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">Khu bếp</h4>
+                            <p class="mb-4">Khu vực bếp luôn luôn có sẵn cho nhu cầu ăn uống cơ bản của bạn nhé, nhớ vệ sinh sau khi sử dụng giúp KOA nhe.
+                            </p>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.5s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="ri-restaurant-line fa-3x mb-3" style="color: #00CCDD;"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Khu bếp</h4>
-                                <p class="mb-4">Khu vực bếp luôn luôn có sẵn cho nhu cầu ăn uống cơ bản của bạn nhé, nhớ vệ sinh sau khi sử dụng giúp KOA nhe.
-                                </p>
-                            </div>
+                </div>
+                <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="koala-service-item service-item text-center rounded p-4">
+                        <div class="icon-box mb-3">
+                            <i class="fas fa-tree fa-3x mb-3" style="color: var(--primary);"></i>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 wow fadeInUp" data-wow-delay="0.7s">
-                        <div class="koala-service-item service-item text-center rounded p-4">
-                            <div class="icon-box mb-3">
-                                <i class="fas fa-tree fa-3x mb-3" style="color: var(--primary);"></i>
-                            </div>
-                            <div class="service-content">
-                                <h4 class="mb-4">Ban công</h4>
-                                <p class="mb-4">Nếu bạn có nhu cầu cùng nhau ngắm sao trời hay ngắm hoàng hôn thì ban công là nơi lý tưởng nhất cho bạn rồi.
-                                </p>
-                            </div>
+                        <div class="service-content">
+                            <h4 class="mb-4">Ban công</h4>
+                            <p class="mb-4">Nếu bạn có nhu cầu cùng nhau ngắm sao trời hay ngắm hoàng hôn thì ban công là nơi lý tưởng nhất cho bạn rồi.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -962,8 +1013,9 @@
                                         <li>Diện tích: 15m²</li>
                                         <li>Ban công</li>
                                         <li>Máy chiếu, Netflix</li>
-                                        <li>Gương toàn thân - Đèn hiệu ứng ánh sáng</li>
+                                        <li>Gương toàn thân</li>
                                         <li>Máy lạnh - Máy quạt</li>
+                                        <li>Đèn hiệu ứng ánh sáng</li>
                                     </ul>
                                     <a href="https://www.canva.com/design/DAGgr2DribM/HjVwWvvty5EPoHvwNNRYYA/edit" target="_blank" class="btn btn-koa w-100 mt-3">Chi tiết</a>
                                 </div>
@@ -1119,6 +1171,22 @@
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
+                        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <h4 class="text-primary">KOA hỏi gì tớ đáp?</h4>
+                            <h5 class="mb-4 fw-bold">Nếu có câu hỏi khác, bạn có thể liên lạc với Home qua đây nhé 
+                                <span>
+                                        <a href="https://www.facebook.com/koarentalhome" target="_blank">
+                                            <i class="ri-facebook-circle-line" style="color: #309898; font-size: 30px;"></i>
+                                        </a>
+                                        <a href="https://www.instagram.com/koa.rentalhome" target="_blank">
+                                            <i class="ri-instagram-line" style="color: #FF9F00; font-size: 30px;"></i>
+                                        </a>
+                                        <a href="https://www.tiktok.com/@koa.rentalhome" target="_blank">
+                                            <i class="ri-tiktok-line" style="color: #F4631E; font-size: 30px;"></i>
+                                        </a>
+                                </span>
+                            </h5>
+                        </div>
                        <div class="accordion koa-question" id="accordionExample">
                             <div class="accordion-item border-0 mb-4">
                                 <h2 class="accordion-header" id="headingOne">
@@ -1641,19 +1709,39 @@
         }
     });
 
-    // Thêm bong bóng bay cho parallax
-    const parallax = document.querySelector('.parallax-section');
-    for (let i = 0; i < 10; i++) {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = Math.random() * 30 + 10;
-        bubble.style.width = `${size}px`;
-        bubble.style.height = `${size}px`;
-        bubble.style.left = `${Math.random() * 100}%`;
-        bubble.style.bottom = `-${size}px`;
-        bubble.style.animationDelay = `${Math.random() * 10}s`;
-        parallax.appendChild(bubble);
-    }
+    // Thêm vào phần script cuối trang
+    document.addEventListener('DOMContentLoaded', function() {
+        const serviceSection = document.querySelector('.service');
+        const koaImages = ['koa-music', 'koa-smile', 'koa-victory', 'koa-yummy', 'koa-sleep'];
+        
+        koaImages.forEach((imgName, index) => {
+            const img = document.createElement('img');
+            img.src = `img/icon/${imgName}.png`; // Đảm bảo đường dẫn đúng
+            img.className = 'koa-floating-img';
+            img.alt = `KOA ${imgName.split('-')[1]}`;
+            
+            // Thiết lập vị trí ngẫu nhiên
+            img.style.left = `${10 + Math.random() * 80}%`;
+            img.style.top = `${10 + Math.random() * 80}%`;
+            
+            // Thiết lập animation delay khác nhau
+            img.style.animationDelay = `${index * 2}s`;
+
+            // 👉 Thêm sự kiện click để "jump"
+            img.addEventListener('click', () => {
+                img.classList.add('jump-on-click');
+
+                // Gỡ class sau khi animation kết thúc (để click lần nữa vẫn nhảy)
+                img.addEventListener('animationend', function handler() {
+                    img.classList.remove('jump-on-click');
+                    img.removeEventListener('animationend', handler);
+                });
+            });
+
+            serviceSection.appendChild(img);
+        });
+    });
+
     </script>
     </body>
 
