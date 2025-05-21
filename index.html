@@ -748,6 +748,11 @@
         z-index: 2;
         animation: koalaFloat 6s infinite ease-in-out;
     }
+    .koala-on-title:hover {
+        transform: scale(1.2) translateY(-10px);
+        filter: drop-shadow(0 0 12px var(--primary));
+        z-index: 3;
+    }
 
     @keyframes koalaFloat {
         0%, 100% { transform: translateY(0); }
