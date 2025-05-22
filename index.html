@@ -690,48 +690,57 @@
     }
     
     /* Thêm vào phần CSS */
-    .koa-floating-img {
-        position: absolute;
-        width: 80px;
-        height: auto;
-        z-index: 0;
-        opacity: 0.7;
-        animation: butterflyFloat 20s infinite ease-in-out;
-        filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
-        transition: transform 0.2s ease;
-    }
+/* Thêm vào phần CSS */
+.koa-floating-img {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    z-index: 0;
+    opacity: 0.7;
+    animation: butterflyFloat 20s infinite ease-in-out;
+    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
 
-    /* Dùng transform đơn thay cho animation khi hover */
-    .koa-floating-img:hover {
-        transform: scale(1.2) translateY(-10px); /* chỉ thay đổi nhỏ */
+/* Hover scale nhỏ */
+.koa-floating-img:hover {
+    transform: scale(1.15) translateY(-6px);
+    filter: drop-shadow(0 0 12px var(--primary));
+    z-index: 1;
+}   
+
+@keyframes butterflyFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(120px, 80px) rotate(10deg);
+    }
+    50% {
+        transform: translate(40px, 120px) rotate(-5deg);
+    }
+    75% {
+        transform: translate(-60px, 45px) rotate(5deg);
+    }
+}
+
+@keyframes happyJump {
+    0%   { transform: scale(1) translateY(0); }
+    25%  { transform: scale(1.25) translateY(-50px); }
+    50%  { transform: scale(1.1) translateY(-20px); }
+    75%  { transform: scale(1.05) translateY(-10px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+.jump-on-click {
+    animation: happyJump 0.6s cubic-bezier(0.65, -0.1, 0.25, 1.5);
+    z-index: 2;
+}
+    .jump-on-click:hover {
+        transform: scale(1.2) translateY(-10px);
         filter: drop-shadow(0 0 12px var(--primary));
-        z-index: 1;
-    }   
-
-    @keyframes butterflyFloat {
-        0%, 100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        25% {
-            transform: translate(120px, 80px) rotate(10deg);
-        }
-        50% {
-            transform: translate(40px, 120px) rotate(-5deg);
-        }
-        75% {
-            transform: translate(-60px, 45px) rotate(5deg);
-        }
-    }
-
-    @keyframes happyJump {
-        0% { transform: scale(1) translateY(0); }
-        30% { transform: scale(1.2) translateY(-40px); }
-        60% { transform: scale(1.1) translateY(-20px); }
-        100% { transform: scale(1) translateY(0); }
-    }
-
-    .jump-on-click {
-        animation: happyJump 0.8s ease;
+        z-index: 3;
     }
 
     .service {
@@ -742,7 +751,7 @@
     .koala-on-title {
         position: absolute;
         top: -60px;     /* canh vị trí nằm trên chữ */
-        left: 305px;    /* lệch trái */
+        left: 20%;    /* lệch trái */
         width: 100px;
         height: auto;
         z-index: 2;
@@ -1734,6 +1743,7 @@
 
             // 👉 Thêm sự kiện click để "jump"
             img.addEventListener('click', () => {
+                img.style.animationDelay = `0s`;
                 img.classList.add('jump-on-click');
 
                 // Gỡ class sau khi animation kết thúc (để click lần nữa vẫn nhảy)
