@@ -389,384 +389,551 @@
             }
         }
 
+        /* css cho feedback image */
+        .testimonial-feedback-img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Chiều dài = chiều rộng */
+            overflow: hidden;
+            position: relative;
+            width: 300px; /* Chiều dài cố định */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-feedback-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;  /* Cắt ảnh để luôn lấp đầy khung */
+            object-position: center;
+            display: block;
+        }
+
         
-    /* Hiệu ứng mới cho phòng */
-    .room-card {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .room-card:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,0.9));
-        z-index: 1;
-        transition: all 0.5s ease;
-    }
-    
-    .room-card:hover:before {
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,0.7));
-    }
-    
-    .room-badge {
-        animation: pulse 2s infinite;
-        z-index: 2;
-    }
-    
-    /* Hiệu ứng nút đặt phòng */
-    .btn-koa {
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
-    }
-    
-    .btn-koa:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-        transition: all 0.5s ease;
-        z-index: -1;
-    }
-    
-    .btn-koa:hover:before {
-        left: 100%;
-    }
-    
-    /* Thêm emoji bay quanh phòng */
-    .room-emoji {
-        position: absolute;
-        font-size: 1.2rem;
-        opacity: 0;
-        z-index: 0;
-        animation: floatEmoji 8s linear infinite;
-    }
-    
-    @keyframes floatEmoji {
-        0% {
-            transform: translateY(0) rotate(0deg);
+        /* Hiệu ứng mới cho phòng */
+        .room-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .room-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 60%, rgba(255,255,255,0.9));
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .room-card:hover:before {
+            background: linear-gradient(to bottom, rgba(255,255,255,0) 30%, rgba(255,255,255,0.7));
+        }
+        
+        .room-badge {
+            animation: pulse 2s infinite;
+            z-index: 2;
+        }
+        
+        /* Hiệu ứng nút đặt phòng */
+        .btn-koa {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-koa:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn-koa:hover:before {
+            left: 100%;
+        }
+        
+        /* Thêm emoji bay quanh phòng */
+        .room-emoji {
+            position: absolute;
+            font-size: 1.2rem;
             opacity: 0;
+            z-index: 0;
+            animation: floatEmoji 8s linear infinite;
         }
-        10% {
-            opacity: 0.7;
+        
+        @keyframes floatEmoji {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
         }
-        90% {
-            opacity: 0.7;
+
+        /* Hiệu ứng mới cho tiện nghi */
+        .icon-box {
+            position: relative;
+            display: inline-block;
         }
-        100% {
-            transform: translateY(-100px) rotate(360deg);
+        
+        .icon-box i {
+            transition: all 0.3s ease;
+        }
+        
+        .icon-box:hover i {
+            transform: scale(1.2) rotate(10deg);
+            text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .icon-box:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: all 0.3s ease;
+        }
+        
+        .icon-box:hover:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        /* Hiệu ứng hover cho box tiện nghi */
+        .amenity-box {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .amenity-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+        
+        .amenity-box:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        
+        .amenity-box:hover:before {
+            transform: scaleX(1);
+        }
+        /* Hiệu ứng mới cho câu hỏi thường gặp */
+        .faq-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+        .faq-card:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: all 0.3s ease;
+        }
+        .faq-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        /* Hiệu ứng mới cho đánh giá */
+        .testimonial-card {
+            position: relative;
+        }
+        
+        .testimonial-card:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background-image: radial-gradient(circle, rgba(255,230,109,0.2) 20%, transparent 60%);
             opacity: 0;
+            transition: all 0.3s ease;
         }
-    }
+        
+        .testimonial-card:hover:after {
+            opacity: 1;
+            transform: scale(1.5);
+        }
+        
+        .testimonial-img {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .testimonial-img {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Hiệu ứng sao đánh giá */
+        .text-warning i {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover .text-warning i {
+            transform: scale(1.2);
+            text-shadow: 0 0 10px rgba(255,193,7,0.5);
+        }
+        
+        /* Hiệu ứng mới cho footer */
+        .footer {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+        }
+        
+        .social-icon {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .social-icon:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            transform: translateX(-100%);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover:after {
+            transform: translateX(100%);
+        }
+        
+        /* Hiệu ứng trái tim */
+        .made-with-love {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .made-with-love i {
+            transition: all 0.5s ease;
+        }
+        
+        .made-with-love:hover i {
+            transform: scale(1.5);
+            color: #ff0000 !important;
+            animation: heartbeat 1s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
 
-    /* Hiệu ứng mới cho tiện nghi */
-    .icon-box {
+        /* koala item  CSS */
+        .koala-service-item {
+            min-height: 340px;
+        }
+        .koala-service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .koala-service-item:hover .icon-box i {
+            transform: scale(1.2) rotate(10deg);
+            text-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .koala-service-item:hover .icon-box:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .koala-service-item:hover .service-content h4 {
+            color: var(--primary);
+        }
+        .koala-service-item:hover .service-content p {
+            color: var(--dark);
+        }
+        .koala-service-item:hover .service-content a {
+            background-color: var(--primary);
+            color: white;
+        }
+        .koala-service-item:hover .service-content a:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        .koala-service-item:hover .service-content a:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .FAQ {
+            background: linear-gradient(to bottom, #f8f0e3 0%, #f8f0e3 30%, #dbe6ed 30%, #dbe6ed 70%, #f8f0e3 70%, #f8f0e3 100%); /*Nền 3 lớp màu */
+        }
+        
+        /* Thêm vào phần CSS */
+        /* Thêm vào phần CSS */
+        .koa-floating-img {
+            position: absolute;
+            width: 80px;
+            height: auto;
+            z-index: 0;
+            opacity: 0.7;
+            animation: butterflyFloat 20s infinite ease-in-out;
+            filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
+            transition: transform 0.2s ease;
+            will-change: transform;
+        }
+
+        /* Hover scale nhỏ */
+        .koa-floating-img:hover {
+            transform: scale(1.15) translateY(-6px);
+            filter: drop-shadow(0 0 12px var(--primary));
+            z-index: 1;
+        }   
+
+        @keyframes butterflyFloat {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(120px, 80px) rotate(10deg);
+            }
+            50% {
+                transform: translate(40px, 120px) rotate(-5deg);
+            }
+            75% {
+                transform: translate(-60px, 45px) rotate(5deg);
+            }
+        }
+
+        @keyframes happyJump {
+            0%   { transform: scale(1) translateY(0); }
+            25%  { transform: scale(1.25) translateY(-50px); }
+            50%  { transform: scale(1.1) translateY(-20px); }
+            75%  { transform: scale(1.05) translateY(-10px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+
+        .jump-on-click {
+            animation: happyJump 0.6s cubic-bezier(0.65, -0.1, 0.25, 1.5);
+            z-index: 2;
+        }
+
+        .jump-on-click:hover {
+            transform: scale(1.2) translateY(-10px);
+            filter: drop-shadow(0 0 12px var(--primary));
+            z-index: 3;
+        }
+
+        .service {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .koala-on-title {
+            position: absolute;
+            top: -60px;     /* canh vị trí nằm trên chữ */
+            left: 20%;    /* lệch trái */
+            width: 100px;
+            height: auto;
+            z-index: 2;
+            animation: koalaFloat 6s infinite ease-in-out;
+        }
+        .koala-on-title:hover {
+            transform: scale(1.2) translateY(-10px);
+            filter: drop-shadow(0 0 12px var(--primary));
+            z-index: 3;
+        }
+
+        @keyframes koalaFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /*typed title trong first page*/
+        /* Container căn giữa */
+        .typed-container {
+        text-align: center;
+        margin: 5px auto;
+        max-width: 800px;
         position: relative;
+        }
+
+        /* Hộp chứa Typed */
+        .typed-box {
         display: inline-block;
-    }
-    
-    .icon-box i {
-        transition: all 0.3s ease;
-    }
-    
-    .icon-box:hover i {
-        transform: scale(1.2) rotate(10deg);
-        text-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .icon-box:after {
-        content: '';
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        background: rgba(78, 205, 196, 0.1);
-        border-radius: 50%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        transition: all 0.3s ease;
-    }
-    
-    .icon-box:hover:after {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    
-    /* Hiệu ứng hover cho box tiện nghi */
-    .amenity-box {
-        transition: all 0.3s ease;
+        /* padding: 20px 30px; */
+        background: #ffeaf4; /* pastel hồng nhạt */
+        border-radius: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Quicksand', cursive;
+        color: #ff5e7e;
+        box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
         position: relative;
-        overflow: hidden;
-    }
-    
-    .amenity-box:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
-    }
-    
-    .amenity-box:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(to right, var(--primary), var(--secondary));
-        transform: scaleX(0);
-        transition: all 0.3s ease;
-    }
-    
-    .amenity-box:hover:before {
-        transform: scaleX(1);
-    }
-    /* Hiệu ứng mới cho câu hỏi thường gặp */
-    .faq-card {
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    .faq-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
-    }
-    .faq-card:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(to right, var(--primary), var(--secondary));
-        transform: scaleX(0);
-        transition: all 0.3s ease;
-    }
-    .faq-card:hover:before {
-        transform: scaleX(1);
-    }
+        }
 
-    /* Hiệu ứng mới cho đánh giá */
-    .testimonial-card {
-        position: relative;
-    }
-    
-    .testimonial-card:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 50px;
-        height: 50px;
-        background-image: radial-gradient(circle, rgba(255,230,109,0.2) 20%, transparent 60%);
-        opacity: 0;
-        transition: all 0.3s ease;
-    }
-    
-    .testimonial-card:hover:after {
-        opacity: 1;
-        transform: scale(1.5);
-    }
-    
-    .testimonial-img {
-        transition: all 0.3s ease;
-    }
-    
-    .testimonial-card:hover .testimonial-img {
-        transform: scale(1.1);
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    /* Hiệu ứng sao đánh giá */
-    .text-warning i {
-        transition: all 0.3s ease;
-    }
-    
-    .testimonial-card:hover .text-warning i {
-        transform: scale(1.2);
-        text-shadow: 0 0 10px rgba(255,193,7,0.5);
-    }
-    
-    /* Hiệu ứng mới cho footer */
-    .footer {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .footer:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 10px;
-        background: linear-gradient(to right, var(--primary), var(--secondary));
-    }
-    
-    .social-icon {
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .social-icon:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-        transform: translateX(-100%);
-        transition: all 0.3s ease;
-    }
-    
-    .social-icon:hover:after {
-        transform: translateX(100%);
-    }
-    
-    /* Hiệu ứng trái tim */
-    .made-with-love {
-        position: relative;
-        display: inline-block;
-    }
-    
-    .made-with-love i {
-        transition: all 0.5s ease;
-    }
-    
-    .made-with-love:hover i {
-        transform: scale(1.5);
-        color: #ff0000 !important;
-        animation: heartbeat 1s infinite;
-    }
-    
-    @keyframes heartbeat {
-        0% { transform: scale(1); }
-        25% { transform: scale(1.1); }
-        50% { transform: scale(1); }
-        75% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
+        /* Viền phía trên */
+        .typed-border-top,
+        .typed-border-bottom {
+        height: 8px;
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 999px;
+        background: linear-gradient(to right, #ff94b4, #ffc8dd);
+        box-shadow: 0 2px 5px rgba(255, 182, 193, 0.4);
+        }
 
-    /* koala item  CSS */
-    .koala-service-item {
-        min-height: 340px;
-    }
-    .koala-service-item:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .koala-service-item:hover .icon-box i {
-        transform: scale(1.2) rotate(10deg);
-        text-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    .koala-service-item:hover .icon-box:after {
-        transform: translate(-50%, -50%) scale(1);
-    }
-    .koala-service-item:hover .service-content h4 {
-        color: var(--primary);
-    }
-    .koala-service-item:hover .service-content p {
-        color: var(--dark);
-    }
-    .koala-service-item:hover .service-content a {
-        background-color: var(--primary);
-        color: white;
-    }
-    .koala-service-item:hover .service-content a:hover {
-        background-color: var(--secondary);
-        color: white;
-    }
-    .koala-service-item:hover .service-content a:after {
-        transform: translate(-50%, -50%) scale(1);
-    }
+        /* Canh lề viền */
+        .typed-border-top {
+        margin-bottom: 5px;
+        }
+        .typed-border-bottom {
+        margin-top: 5px;
+        }
 
-    .FAQ {
-        background: linear-gradient(to bottom, #f8f0e3 0%, #f8f0e3 30%, #dbe6ed 30%, #dbe6ed 70%, #f8f0e3 70%, #f8f0e3 100%); /*Nền 3 lớp màu */
-    }
-    
-    /* Thêm vào phần CSS */
-/* Thêm vào phần CSS */
-.koa-floating-img {
-    position: absolute;
-    width: 80px;
-    height: auto;
-    z-index: 0;
-    opacity: 0.7;
-    animation: butterflyFloat 20s infinite ease-in-out;
-    filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
-    transition: transform 0.2s ease;
-    will-change: transform;
-}
+        /* Hiệu ứng con trỏ */
+        .typed-cursor {
+        font-size: 1.5rem;
+        color: #ff7a9c;
+        animation: blink 0.7s infinite;
+        }
 
-/* Hover scale nhỏ */
-.koa-floating-img:hover {
-    transform: scale(1.15) translateY(-6px);
-    filter: drop-shadow(0 0 12px var(--primary));
-    z-index: 1;
-}   
+        @keyframes blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+        }
 
-@keyframes butterflyFloat {
-    0%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(120px, 80px) rotate(10deg);
-    }
-    50% {
-        transform: translate(40px, 120px) rotate(-5deg);
-    }
-    75% {
-        transform: translate(-60px, 45px) rotate(5deg);
-    }
-}
+        /* nút play trên trang đầu */
+        .btn-play {
+            position: relative;
+            display: block;
+            box-sizing: content-box;
+            width: 16px;
+            height: 26px;
+            border-radius: 100%;
+            border: none;
+            outline: none !important;
+            padding: 18px 20px 20px 28px;
+            background: var(--primary);
+        }
 
-@keyframes happyJump {
-    0%   { transform: scale(1) translateY(0); }
-    25%  { transform: scale(1.25) translateY(-50px); }
-    50%  { transform: scale(1.1) translateY(-20px); }
-    75%  { transform: scale(1.05) translateY(-10px); }
-    100% { transform: scale(1) translateY(0); }
-}
+        .btn-play:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 100%;
+            animation: pulse-border 1500ms ease-out infinite;
+        }
 
-.jump-on-click {
-    animation: happyJump 0.6s cubic-bezier(0.65, -0.1, 0.25, 1.5);
-    z-index: 2;
-}
-    .jump-on-click:hover {
-        transform: scale(1.2) translateY(-10px);
-        filter: drop-shadow(0 0 12px var(--primary));
-        z-index: 3;
-    }
+        .btn-play:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 60px;
+            height: 60px;
+            background: #FFFFFF;
+            border-radius: 100%;
+            transition: all 200ms;
+        }
 
-    .service {
-        position: relative;
-        overflow: hidden;
-    }
+        .btn-play span {
+            display: block;
+            position: relative;
+            z-index: 3;
+            width: 0;
+            height: 0;
+            left: -1px;
+            border-left: 16px solid var(--primary);
+            border-top: 11px solid transparent;
+            border-bottom: 11px solid transparent;
+        }
 
-    .koala-on-title {
-        position: absolute;
-        top: -60px;     /* canh vị trí nằm trên chữ */
-        left: 20%;    /* lệch trái */
-        width: 100px;
-        height: auto;
-        z-index: 2;
-        animation: koalaFloat 6s infinite ease-in-out;
-    }
-    .koala-on-title:hover {
-        transform: scale(1.2) translateY(-10px);
-        filter: drop-shadow(0 0 12px var(--primary));
-        z-index: 3;
-    }
+        @keyframes pulse-border {
+            0% {
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+                opacity: 1;
+            }
 
-    @keyframes koalaFloat {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
-    }
+            100% {
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+                opacity: 0;
+            }
+        }
+
+        .modal-video .modal-dialog {
+            position: relative;
+            max-width: 800px;
+            margin: 60px auto 0 auto;
+        }
+
+        .modal-video .modal-body {
+            position: relative;
+            padding: 0px;
+        }
+
+        .modal-video .close {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 0px;
+            top: -30px;
+            z-index: 999;
+            font-size: 30px;
+            font-weight: normal;
+            color: #FFFFFF;
+            background: #000000;
+            opacity: 1;
+        }
 
     </style>
     </head>
@@ -836,15 +1003,47 @@
                             Homestay nghỉ dưỡng dành cho giới trẻ
                             <img src="img/icon/koa-lie.png" alt="Koala" class="koala-on-title">
                         </h1>
+                        <div class="typed-container">
+                            <div class="typed-border-top"></div>
+                            <h2 class="typed-box">
+                                <span class="typed-text-output"></span>
+                            </h2>
+                            <div class="typed-border-bottom"></div>
+                            <div class="typed-text d-none">PS4, Netflix; Billiards, Boardgame,...; Riêng tư tuyệt đối; Đặt phòng đơn giản; Combo giờ đa dạng</div>
+                        </div>
                         <p class="fs-4 mb-4 wow fadeInUp" data-wow-delay="0.5s">Tại KOA Rental Home, chúng tôi không chỉ cung cấp chỗ ở mà còn mang đến trải nghiệm đáng nhớ với dịch vụ chu đáo và không gian ấm áp như nhà.</p>
-                        <a href="https://www.facebook.com/koarentalhome" target="_blank" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s">Đặt phòng ngay</a>
+                        <div class="d-flex align-items-center">
+                            <a href="https://www.facebook.com/koarentalhome" target="_blank" class="btn btn-primary rounded-pill py-3 px-5 wow fadeInUp" data-wow-delay="0.7s"> Đặt phòng ngay </a>
+                            <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/zUJuVsSR5n4?si=LYf8voFkSj2ar5u-" data-bs-target="#videoModal">
+                                <span></span>
+                            </button>
+                        </div>
                     </div>
                     <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                        <img src="img\background\house.png" class="img-fluid w-100 h-100" alt="">
+                        <img src="img\background\background-2.png" class="img-fluid w-100 h-100" alt="">
                     </div>
                 </div>
             </div>
             <!-- Hero Header End -->
+            <!-- Video Modal -->
+            <div class="modal modal-video fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content rounded-0">
+                            <div class="modal-header">
+                                <h1 class="modal-title display-5" id="exampleModalLabel">Cái nhìn đầu tiên về KOA</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- 16:9 aspect ratio -->
+                                <div class="ratio ratio-16x9">
+                                    <iframe class="embed-responsive-item" src="" id="video" allowfullscreen="" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--end video modal -->
+            <!-- thanh giới thiệu sản phẩm -->
             <div class="overflow-hidden px-5 hero-section main-container animate-left-right">
                 <div class="image-container d-flex flex-row">
                     <div class="floating-element vinyl-pink" style="top: 50px; left: 50px;"><img src="img/service-icon/bed.png" class="h-100 w-px-50"></div>
@@ -869,6 +1068,7 @@
                     <div class="floating-element square" style="top: 260px; left: 450px; background-color: #4db6ac;"></div>
                 </div>
         </div>
+        <!-- end thanh giới thiệu sản phẩm -->
         </div>
         <!-- Navbar & Hero End -->
 
@@ -1104,18 +1304,21 @@
                 </div>
                 <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/1.png' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
+                        <div class="testimonial-inner text-center">
                             <div class="d-flex align-items-center justify-content-center mb-4">
                                 <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
                                     <img src="img/avatar/1.png" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">Đỗ Cao Đạt</h5>
+                                    <h5 class="mb-2">Khách hàng của KOA</h5>
                                     <p class="mb-0">KOA 101 - <small>05/05/2025</small></p>
                                 </div>
                             </div>
-                            <p class="fs-7">Một trải nghiệm tuyệt vời! Homestay sạch sẽ, tiện nghi đầy đủ và chủ nhà cực kỳ thân thiện. Không gian thoáng đãng, yên bình, phù hợp để nghỉ dưỡng. Tôi rất hài lòng và chắc chắn sẽ quay lại!
-                            </p>
+                            <div class="testimonial-feedback-img pb-0">
+                                <a href="#">
+                                    <img src="img/feedback/feedback-1.png" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
                             <div class="text-center">
                                 <div class="d-flex justify-content-center">
                                     <i class="fas fa-star text-primary"></i>
@@ -1128,18 +1331,21 @@
                         </div>
                     </div>
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/2.png' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
+                        <div class="testimonial-inner text-center">
                             <div class="d-flex align-items-center justify-content-center mb-4">
                                 <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
                                     <img src="img/avatar/2.png" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">Bùi Nguyễn Kim Phú</h5>
+                                    <h5 class="mb-2">Khách hàng của KOA</h5>
                                     <p class="mb-0">KOA 302 - <small>19/05/2025</small></p>
                                 </div>
                             </div>
-                            <p class="fs-7">Một kỳ nghỉ hoàn hảo! Không gian thoáng đãng, view đẹp, yên tĩnh. Đội ngũ nhân viên chu đáo, đồ ăn ngon. Rất đáng giá!
-                            </p>
+                            <div class="testimonial-feedback-img pb-0">
+                                <a href="#">
+                                    <img src="img/feedback/feedback-2.png" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
                             <div class="text-center">
                                 <div class="d-flex justify-content-center">
                                     <i class="fas fa-star text-primary"></i>
@@ -1152,18 +1358,21 @@
                         </div>
                     </div>
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/avatar/3.png' alt=''>">
-                        <div class="testimonial-inner text-center p-5">
+                        <div class="testimonial-inner text-center">
                             <div class="d-flex align-items-center justify-content-center mb-4">
                                 <div class="testimonial-inner-img border border-primary border-3 me-4" style="width: 100px; height: 100px; border-radius: 50%;">
                                     <img src="img/avatar/3.png" class="img-fluid rounded-circle" alt="">
                                 </div>
                                 <div>
-                                    <h5 class="mb-2">Đào Thanh Bảo Trâm</h5>
+                                    <h5 class="mb-2">Khách hàng của KOA</h5>
                                     <p class="mb-0">KOA 201 - <small>12/04/2025</small></p>
                                 </div>
                             </div>
-                            <p class="fs-7">Bàn bida hết nước chấm. Dịch vụ tuyệt vời, chủ nhà thân thiện và hỗ trợ tận tình. Tôi cảm thấy như đang ở nhà. Nếu có dịp, tôi nhất định sẽ quay lại!
-                            </p>
+                            <div class="testimonial-feedback-img pb-0">
+                                <a href="#">
+                                    <img src="img/feedback/feedback-3.png" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
                             <div class="text-center">
                                 <div class="d-flex justify-content-center">
                                     <i class="fas fa-star text-primary"></i>
@@ -1617,6 +1826,7 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
     
 
     <!-- Template Javascript -->
@@ -1757,6 +1967,32 @@
         });
     });
 
+    // Typed Initiate
+    if ($('.typed-text-output').length == 1) {
+        var typed_strings = $('.typed-text').text();
+        var typed = new Typed('.typed-text-output', {
+            strings: typed_strings.split('; '),
+            typeSpeed: 100,
+            backSpeed: 20,
+            backDelay: 3000,
+            smartBackspace: false,
+            loop: true,
+            cursorChar: '🐨',
+        });
+    }
+
+    // Modal Video
+    var $videoSrc;
+    $('.btn-play').click(function () {
+        $videoSrc = $(this).data("src");
+    });
+    console.log($videoSrc);
+    $('#videoModal').on('shown.bs.modal', function (e) {
+        $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+    })
+    $('#videoModal').on('hide.bs.modal', function (e) {
+        $("#video").attr('src', $videoSrc);
+    })
     </script>
     </body>
 
