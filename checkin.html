@@ -24,6 +24,7 @@
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/plyr/plyr.css" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
@@ -69,8 +70,8 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#rooms">
-                                    <i class="fas fa-door-open me-2"></i>Phòng
+                                <a class="nav-link" href="#process">
+                                    <i class="fas fa-angle-double-right me-2"></i>Quy trình
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -149,7 +150,7 @@
         <!-- Navbar & Hero End -->
 
         <!--Noi quy start -->
-        <div id="rooms" class="container-fluid py-5 bg-light">
+        <div id="rules" class="container-fluid py-5 bg-light">
                 <div class="container">
                     <h2 class="text-center section-title animate__animated wow lightSpeedIn" style="animation-delay: 0s;">Nội quy của Home</h2>
                     <p class="text-center mb-5 animate__animated wow lightSpeedIn" style="animation-delay: 0s;">Hãy giúp Home tôn trọng quy định để có 1 trải nghiệm lành mạnh và vui vẻ nhé</p>
@@ -176,7 +177,7 @@
 
 
         <!-- Ảnh quy trình Start -->
-        <div class="container-fluid testimonial py-5">
+        <div id="process" class="container-fluid testimonial py-5">
             <div class="container py-5">
                 <div class=" mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
                     <div class="d-flex flex-wrap justify-content-between align-items-center">
@@ -190,16 +191,16 @@
                 <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-1.jpg' alt=''>">
                         <div class="testimonial-inner text-center">
-                            <div class="testimonial-feedback-img pb-0">
+                            <div class="testimonial-process-img pb-0">
                                 <a href="#">
-                                    <img src="img/process/process-1.jpg" alt="">
+                                    <img src="img/process/process-1.jpg" class="img-fluid w-100" alt="">
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-2.jpg' alt=''>">
                         <div class="testimonial-inner text-center">
-                            <div class="testimonial-feedback-img pb-0">
+                            <div class="testimonial-process-img pb-0">
                                 <a href="#">
                                     <img src="img/process/process-2.jpg" class="img-fluid w-100" alt="">
                                 </a>
@@ -208,9 +209,45 @@
                     </div>
                     <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-3.jpg' alt=''>">
                         <div class="testimonial-inner text-center">
-                            <div class="testimonial-feedback-img pb-0">
+                            <div class="testimonial-process-img pb-0">
                                 <a href="#">
                                     <img src="img/process/process-3.jpg" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-4.jpg' alt=''>">
+                        <div class="testimonial-inner text-center">
+                            <div class="testimonial-process-img pb-0">
+                                <a href="#">
+                                    <img src="img/process/process-4.jpg" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-5.jpg' alt=''>">
+                        <div class="testimonial-inner text-center">
+                            <div class="testimonial-process-img pb-0">
+                                <a href="#">
+                                    <img src="img/process/process-5.jpg" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-6.jpg' alt=''>">
+                        <div class="testimonial-inner text-center">
+                            <div class="testimonial-process-img pb-0">
+                                <a href="#">
+                                    <img src="img/process/process-6.jpg" class="img-fluid w-100" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item" data-dot="<img class='img-fluid' src='img/process/process-7.jpg' alt=''>">
+                        <div class="testimonial-inner text-center">
+                            <div class="testimonial-process-img pb-0">
+                                <a href="#">
+                                    <img src="img/process/process-7.jpg" class="img-fluid w-100" alt="">
                                 </a>
                             </div>
                         </div>
@@ -221,27 +258,34 @@
         <!-- Ảnh quy trình End -->
         <!-- Process video Modal -->
         <div class="modal modal-video fade" id="processVideoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content rounded-0">
-                        <div class="modal-header">
-                            <h1 class="modal-title display-5" id="exampleModalLabel">Hướng dẫn lối ra vào Home</h3>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- 16:9 aspect ratio -->
-                            <div class="ratio ratio-16x9">
-                                <iframe class="embed-responsive-item" src="" id="processVideo" allowfullscreen="" allowscriptaccess="always" allow="autoplay"></iframe>
-                            </div>
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content cute-style">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-4" id="exampleModalLabel">🎀 Hướng dẫn đường đến KOA Rental Home 🎥</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                    </div>
+                    <div class="modal-body p-0">
+                        <div class="video-player-embed ratio ratio-16x9">
+                            <video id="plyr-video-player-process" class="w-100" poster="img/HuongDanVaoCua.png" controls playsinline>
+                                <source src="vid/HuongDanVaoCua.mp4" type="video/mp4">
+                                <!-- Nếu bạn muốn nhúng TikTok, dùng <iframe> thay vì <video> -->
+                            </video>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
         <!--end process video modal -->
 
         <!-- FAQ Start -->
         <div id="quotes" class="container-fluid FAQ bg-light overflow-hidden py-5">
             <div class="container py-5">
                 <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
+                        <div class="FAQ-img RotateMoveRight rounded">
+                            <img src="img\background\koala-thinking.png" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
                     <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s">
                         <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                             <h4 class="text-primary">KOA hỏi gì tớ đáp?</h4>
@@ -301,11 +345,6 @@
                                 </div>
                             </div>
                        </div>
-                    </div>
-                    <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.3s">
-                        <div class="FAQ-img RotateMoveRight rounded">
-                            <img src="img\background\koala-thinking.png" class="img-fluid w-100" alt="">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -396,6 +435,7 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/plyr/plyr.js"></script>
     
 
     <!-- Template Javascript -->

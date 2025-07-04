@@ -161,12 +161,42 @@
         $("#video").attr('src', $videoSrc);
     })
 
-    $('#processVideoModal').on('shown.bs.modal', function (e) {
-        $("#processVideo").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
-    })
-    $('#processVideoModal').on('hide.bs.modal', function (e) {
-        $("#processVideo").attr('src', $videoSrc);
-    })
+        // Modal Process Video
+        let processVideoPlayer = null;
+        $('#processVideoModal').on('shown.bs.modal', function (e) {
+            $("#processVideo").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            // Khởi tạo Plyr
+            processVideoPlayer = new Plyr(`#plyr-video-player-process`, {
+                autoplay: false,
+                loop: { active: true },
+                volume: 1,
+                speed: { selected: 1, options: [0.75, 1, 1.25, 1.5, 2] },
+                controls: [
+                    'play-large', 'rewind', 'play', 'fast-forward',
+                    'progress', 'current-time', 'duration',
+                    'mute', 'volume', 'captions', 'settings', 'fullscreen', 'pip'
+                ],
+                i18n: {
+                    restart: 'Phát lại',
+                    rewind: 'Lùi 10s',
+                    play: 'Phát',
+                    pause: 'Tạm dừng',
+                    fastForward: 'Tiến 10s',
+                    fullscreen: 'Toàn màn hình',
+                    settings: 'Cài đặt',
+                    captions: 'Phụ đề',
+                    volume: 'Âm lượng'
+                }
+            });
+        })
+
+        $('#processVideoModal').on('hide.bs.modal', function (e) {
+            $("#processVideo").attr('src', $videoSrc);
+            // Hủy Plyr khi đóng modal
+            if (processVideoPlayer) {
+                processVideoPlayer.destroy();
+            }
+        })
 
     // tạo chuyển động lặp cho list ảnh
     $('.vendor-carousel').owlCarousel({
