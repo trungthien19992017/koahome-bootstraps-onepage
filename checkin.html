@@ -178,8 +178,13 @@
         <!-- Ảnh quy trình Start -->
         <div class="container-fluid testimonial py-5">
             <div class="container py-5">
-                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
-                    <h4 class="text-primary">Quy trình check in</h4>
+                <div class=" mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 900px;">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center">
+                        <h4 class="text-primary">Quy trình check in</h4>
+                        <button type="button" class="btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/JutF0zoPzto?si=KXOZgnezb3BqJUUz" data-bs-target="#processVideoModal">
+                            <span></span>
+                        </button>
+                    </div>
                     <h1 class="display-5 mb-4">Vui lòng tham khảo thông tin về quy trình check in ở đây nhé.</h1>
                 </div>
                 <div class="testimonial-carousel owl-carousel wow zoomInDown" data-wow-delay="0.2s">
@@ -214,6 +219,24 @@
             </div>
         </div>
         <!-- Ảnh quy trình End -->
+        <!-- Process video Modal -->
+        <div class="modal modal-video fade" id="processVideoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content rounded-0">
+                        <div class="modal-header">
+                            <h1 class="modal-title display-5" id="exampleModalLabel">Hướng dẫn lối ra vào Home</h3>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- 16:9 aspect ratio -->
+                            <div class="ratio ratio-16x9">
+                                <iframe class="embed-responsive-item" src="" id="processVideo" allowfullscreen="" allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!--end process video modal -->
 
         <!-- FAQ Start -->
         <div id="quotes" class="container-fluid FAQ bg-light overflow-hidden py-5">

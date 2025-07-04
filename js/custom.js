@@ -126,8 +126,11 @@
                     img.removeEventListener('animationend', handler);
                 });
             });
-
-            serviceSection.appendChild(img);
+            
+            if (serviceSection != null) {
+                serviceSection.appendChild(img);
+            }
+            
         });
     });
 
@@ -156,6 +159,13 @@
     })
     $('#videoModal').on('hide.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc);
+    })
+
+    $('#processVideoModal').on('shown.bs.modal', function (e) {
+        $("#processVideo").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+    })
+    $('#processVideoModal').on('hide.bs.modal', function (e) {
+        $("#processVideo").attr('src', $videoSrc);
     })
 
     // tạo chuyển động lặp cho list ảnh
