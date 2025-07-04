@@ -99,7 +99,7 @@
 
     // Thêm vào phần script cuối trang
     document.addEventListener('DOMContentLoaded', function() {
-        const serviceSection = document.querySelector('.service');
+        const serviceSection = document.querySelector('.koa-bubble');
         const koaImages = ['koa-music', 'koa-smile', 'koa-victory', 'koa-yummy', 'koa-sleep'];
         
         koaImages.forEach((imgName, index) => {

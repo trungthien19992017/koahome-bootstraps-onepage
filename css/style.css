@@ -763,6 +763,8 @@
     height: 120px;
     background: url(../img/icon/koa-motion1.png) center center / contain no-repeat;
     animation: TestimonialMoveLeft 100s linear infinite;
+    filter: blur(1px); /* tăng số px nếu muốn mờ hơn */
+    opacity: 0.3; /* tuỳ chọn: kết hợp để làm mờ dịu hơn */
     z-index: -1;
 
 }
@@ -776,6 +778,8 @@
     height: 120px;
     background: url(../img/icon/koa-motion2.png) center center / contain no-repeat;
     animation: TestimonialMoveRight 100s linear infinite;
+    filter: blur(1px); /* tăng số px nếu muốn mờ hơn */
+    opacity: 0.3; /* tuỳ chọn: kết hợp để làm mờ dịu hơn */
     z-index: -1;
 
 }
