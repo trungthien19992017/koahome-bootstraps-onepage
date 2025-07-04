@@ -920,6 +920,7 @@ animation: blink 0.7s infinite;
     display: block;
 }
 
+    /* custom popup modal video */
     .modal-content.cute-style {
         border-radius: 1.5rem;
         border: 2px solid #f9c5d1;
@@ -938,7 +939,6 @@ animation: blink 0.7s infinite;
     .modal-title {
         color: #ff4d6d;
         font-weight: 700;
-        font-family: 'Comic Sans MS', cursive, sans-serif;
     }
 
     .btn-close {
