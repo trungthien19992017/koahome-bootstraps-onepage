@@ -276,6 +276,107 @@
         }
     });
 
+
+          // xử lý video file trên form field
+         document.addEventListener('DOMContentLoaded', () => {
+          // Lấy tất cả các phần tử có class youtube-video-embed
+          const wrappers = document.querySelectorAll('.video-player-embed');
+
+          wrappers.forEach((wrapper, index) => {
+            const embed = wrapper.querySelector('.plyr__video-embed');
+
+            // Gán ID duy nhất nếu chưa có
+            if (!embed.id) {
+              embed.id = `plyr-video-${index}`;
+            }
+
+            // Khởi tạo Plyr
+            let videoPlayer = new Plyr(`#${embed.id}`, {
+              autoplay: false,
+              loop: { active: false },
+              volume: 1,
+              speed: { selected: 1, options: [0.75, 1, 1.25, 1.5, 2] },
+              controls: [
+                  'play-large', 'rewind', 'play', 'fast-forward',
+                  'progress', 'current-time', 'duration',
+                  'mute', 'volume', 'captions', 'settings', 'fullscreen', 'pip'
+              ],
+              i18n: {
+                  restart: 'Phát lại',
+                  rewind: 'Lùi 10s',
+                  play: 'Phát',
+                  pause: 'Tạm dừng',
+                  fastForward: 'Tiến 10s',
+                  fullscreen: 'Toàn màn hình',
+                  settings: 'Cài đặt',
+                  captions: 'Phụ đề',
+                  volume: 'Âm lượng'
+              }
+            });
+
+            //hiển thị trong now playing IOS
+            videoPlayer.on('play', () => {
+              const videoTitle = embed.getAttribute('title') || 'KOA Video'; // fallback nếu không có title
+
+              if ('mediaSession' in navigator) {
+                navigator.mediaSession.metadata = new MediaMetadata({
+                  title: videoTitle,
+                  artist: 'KOA Video',
+                  album: 'KOA Video Album',
+                  artwork: [
+                       { src: 'https://pub-7171d6b031a04e3983a20a87daffce46.r2.dev/koala_with_headphones.png', sizes: '512x512', type: 'image/png' }
+                  ]
+                });
+              }
+            });
+
+            // Ví dụ xử lý sự kiệnx1
+            videoPlayer.on('ended', () => {
+                rplm({
+                    title: "Hoàn tất video!",
+                    text: "Cảm ơn quý khách đã quan tâm 💞💓🎞🎮.",
+                    type: "success",
+                    timer: 2000,
+                    html: true,
+                    showConfirmButton: false,
+			        allowOutsideClick: true
+                });
+                // Tạo một container cho hiệu ứng mưa
+                const rainContainer = document.createElement('div');
+                rainContainer.classList.add('rain-container');
+                document.body.appendChild(rainContainer);
+
+                // Số lượng icon mưa
+                const numberOfIcons = 30;
+
+                // Tạo các icon 💞 ngẫu nhiên và rơi từ trên xuống
+                for (let i = 0; i < numberOfIcons; i++) {
+                    const rainIcon = document.createElement('span');
+                    rainIcon.classList.add('rain-icon');
+                    rainIcon.innerHTML = '️♥️'; // Icon muốn hiển thị
+
+                    // Tạo vị trí ngẫu nhiên cho từng icon
+                    rainIcon.style.left = `${Math.random() * 100}vw`; // Vị trí ngang ngẫu nhiên
+                    rainIcon.style.top = `-${Math.random() * 10 + 10}vh`; // Vị trí dọc ngẫu nhiên ngoài màn hình (trên cùng)
+
+                    rainIcon.style.animationDuration = `${Math.random() * 2 + 3}s`; // Thời gian rơi ngẫu nhiên từ 3s đến 5s
+
+                    // Thêm độ trễ ngẫu nhiên để hiệu ứng mưa không đồng loạt
+                    rainIcon.style.animationDelay = `${Math.random() * 1}s`; // Thời gian trễ ngẫu nhiên từ 0s đến 1s
+
+                    // Thêm icon vào rain container
+                    rainContainer.appendChild(rainIcon);
+                }
+
+                // Sau khi hiệu ứng mưa hoàn thành, xóa rain container
+                setTimeout(() => {
+                    rainContainer.remove();
+                }, 5000); // Thời gian hiệu ứng mưa (5 giây)
+                
+            });
+          });
+        });
+
     // // Làm khó người dùng lấy source code
     // // Ngăn F12, Ctrl+Shift+I/J/C/U, ngăn chặn save source, chuột phải
     // document.addEventListener("contextmenu", e => e.preventDefault());

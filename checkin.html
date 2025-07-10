@@ -25,6 +25,7 @@
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
         <link href="lib/plyr/plyr.css" rel="stylesheet">
+        <link href="lib/sweetalert2/replete-modal.css" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
@@ -265,7 +266,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
                     </div>
                     <div class="modal-body p-0">
-                        <div class="video-player-embed ratio ratio-16x9">
+                        <div class="ratio ratio-16x9">
                             <video id="plyr-video-player-process" class="w-100" poster="img/HuongDanVaoCua.png" controls playsinline>
                                 <source src="vid/HuongDanVaoCua.mp4" type="video/mp4">
                                 <!-- Nếu bạn muốn nhúng TikTok, dùng <iframe> thay vì <video> -->
@@ -322,11 +323,11 @@
                             </div>
                             <div class="accordion-item border-0 mb-4">
                                 <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                         Nếu mình TỰ check in sớm/check out trễ so với giờ đã đặt (và không thông báo) thì có sao không?
                                     </button>
                                 </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                                     <div class="accordion-body my-2">
                                         <h5><b>Home chỉ hỗ trợ và không thu thêm phí với trường hợp khách nhắn báo KOA, nếu bạn tự ý in sớm/out trễ thì KOA sẽ có phụ thu 1 khoản nhỏ như dưới:</b></h5>
                                         <p>Check in sớm hoặc check out trễ.</p>
@@ -339,15 +340,32 @@
                             </div>
                             <div class="accordion-item border-0 mb-4">
                                 <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
+                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseTOne">
                                         Phòng có camera không?
                                     </button>
                                 </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                     <div class="accordion-body my-2">
                                         <h5><b>KOA hiểu được tâm lý của mình nên là:</b></h5>
                                         <p>KOA hoàn toàn không lắp đặt camera trong phòng đâu ạ.</p>
                                         <p>Chúng mình cũng thường xuyên kiểm tra cam ẩn để đảm bảo an toàn và có sẵn thiết bị check cam trong phòng để khách tự kiểm tra cho yên tâm nữa nhen.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 mb-4">
+                                <h2 class="accordion-header" id="headingTen">
+                                    <button class="accordion-button collapsed rounded-top" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                                        Làm sao để bật máy PS4 và kết nối tay cầm để chơi game 2 người vậy KOA?
+                                    </button>
+                                </h2>
+                                <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body my-2">
+                                        <h5 class="fs-4"><b>🎥 Bạn xem video dưới nhé:</b></h5>
+                                        <div class="video-player-embed ratio ratio-16x9">
+                                            <video class="w-100 plyr__video-embed" class="w-100" id="plyr-video-player-huongdanps4" poster="img/HuongDanPS4.png" playsinline="" controls="" title="Hướng dẫn bật PS4 và kết nối tay cầm">
+                                                <source src="vid/HuongDanPS4.mp4" type="video/mp4">
+                                            </video>
+                                        </div>        
                                     </div>
                                 </div>
                             </div>
@@ -528,6 +546,7 @@
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="lib/typed/typed.min.js"></script>
     <script src="lib/plyr/plyr.js"></script>
+    <script src="lib/sweetalert2/replete-modal.js"></script>
     
 
     <!-- Template Javascript -->
