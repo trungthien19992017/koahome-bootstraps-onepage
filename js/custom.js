@@ -334,9 +334,9 @@
             videoPlayer.on('ended', () => {
                 rplm({
                     title: "Hoàn tất video!",
-                    text: "Cảm ơn quý khách đã quan tâm 💞💓🎞🎮.",
+                    text: "Cảm ơn bạn đã quan tâm 💞💓🎞🎮.",
                     type: "success",
-                    timer: 2000,
+                    timer: 3000,
                     html: true,
                     showConfirmButton: false,
 			        allowOutsideClick: true
