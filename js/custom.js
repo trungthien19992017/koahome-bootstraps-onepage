@@ -377,40 +377,40 @@
           });
         });
 
-    // Làm khó người dùng lấy source code
-    // Ngăn F12, Ctrl+Shift+I/J/C/U, ngăn chặn save source, chuột phải
-    document.addEventListener("contextmenu", e => e.preventDefault());
+    // // Làm khó người dùng lấy source code
+    // // Ngăn F12, Ctrl+Shift+I/J/C/U, ngăn chặn save source, chuột phải
+    // document.addEventListener("contextmenu", e => e.preventDefault());
 
-    document.addEventListener("keydown", function (e) {
-        if (
-            e.key === "F12" || 
-            (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) ||
-            (e.ctrlKey && e.key.toUpperCase() === "U") ||
-            (e.ctrlKey && e.key.toUpperCase() === "S")
-        ) {
-            e.preventDefault();
-        }
-    });
+    // document.addEventListener("keydown", function (e) {
+    //     if (
+    //         e.key === "F12" || 
+    //         (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key.toUpperCase())) ||
+    //         (e.ctrlKey && e.key.toUpperCase() === "U") ||
+    //         (e.ctrlKey && e.key.toUpperCase() === "S")
+    //     ) {
+    //         e.preventDefault();
+    //     }
+    // });
 
-    // Phát hiện DevTools mở
-    (function () {
-        let devtoolsOpen = false;
+    // // Phát hiện DevTools mở
+    // (function () {
+    //     let devtoolsOpen = false;
 
-        const detectDevTools = () => {
-            const start = performance.now();
-            debugger;
-            const end = performance.now();
+    //     const detectDevTools = () => {
+    //         const start = performance.now();
+    //         debugger;
+    //         const end = performance.now();
 
-            if (end - start > 100) {
-                if (!devtoolsOpen) {
-                    devtoolsOpen = true;
-                    alert("Trang không cho phép mở DevTools. Đang chuyển hướng...");
-                    window.location.href = "about:blank"; // hoặc window.close();
-                }
-            } else {
-                devtoolsOpen = false;
-            }
-        };
+    //         if (end - start > 100) {
+    //             if (!devtoolsOpen) {
+    //                 devtoolsOpen = true;
+    //                 alert("Trang không cho phép mở DevTools. Đang chuyển hướng...");
+    //                 window.location.href = "about:blank"; // hoặc window.close();
+    //             }
+    //         } else {
+    //             devtoolsOpen = false;
+    //         }
+    //     };
 
-        setInterval(detectDevTools, 1000);
-    })();   
+    //     setInterval(detectDevTools, 1000);
+    // })();   

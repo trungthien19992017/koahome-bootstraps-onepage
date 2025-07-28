@@ -162,6 +162,31 @@
         </div>
         <!-- Navbar & Hero End -->
 
+        <!--CTKM start -->
+        <div id="rules" class="container-fluid py-5 bg-light">
+                <div class="container">
+                    <h2 class="text-center text-primary section-title animate__animated wow lightSpeedIn" style="animation-delay: 0s;">Chương trình khuyến mãi của KOA</h2>
+                    
+
+                <div class="row px-xl-5">
+                    <div class="col">
+                        <div class="owl-carousel vendor-rule-carousel">
+                            <div class="bg-light p-4">
+                                <img src="img/promotion/promotion-1.png" alt="">
+                            </div>
+                            <div class="bg-light p-4">
+                                <img src="img/promotion/promotion-2.png" alt="">
+                            </div>
+                            <!-- <div class="bg-light p-4">
+                                <img src="img/promotion/promotion-3.png" alt="">
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        <!-- CTKM end -->
+
         <!--Noi quy start -->
         <div id="rules" class="container-fluid py-5 bg-light">
                 <div class="container">
@@ -567,7 +592,23 @@
 
     
     <script>
- 
+            // popup khuyến mãi khi truy cập trang
+ 			$(document).ready(function(){
+				rplm({
+					title: "",
+					text: '<div class="bg-light h-auto p-4"> <img class="" src="img/promotion/promotion-1.png" alt=""></div>',
+					html: true,
+                    showConfirmButton: false,
+					animation: 'bounceInDown',
+					allowOutsideClick: true,
+					overlay: "black",
+					oneTimePopUp: true,
+        			cookieName:'blockP  pUP',
+					modalNOverlay: 'black',
+					showCloseButton: true,
+					closeButtonWithInModal: true,
+				});
+			});
     </script>
     </body>
 
