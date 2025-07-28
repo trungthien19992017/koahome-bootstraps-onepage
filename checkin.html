@@ -593,10 +593,10 @@
     
     <script>
             // popup khuyến mãi khi truy cập trang
- 			$(document).ready(function(){
+ 			$(window).on('load',function(){
 				rplm({
 					title: "",
-					text: '<div class="bg-light h-auto p-4"><a href="https://www.facebook.com/share/1Finm8vFQ2/?mibextid=wwXIfr" targer="_blank"><img class="" src="img/promotion/promotion-1.png" alt=""></a></div>',
+					text: '<div class="bg-light h-auto"><a href="https://www.facebook.com/share/1Finm8vFQ2/?mibextid=wwXIfr" targer="_blank"><img class="" src="img/promotion/promotion-1.png" alt=""></a></div>',
 					html: true,
                     showConfirmButton: false,
 					animation: 'bounceInDown',
@@ -604,6 +604,9 @@
 					overlay: "black",
 					oneTimePopUp: true,
         			cookieName:'blockP  pUP',
+					showCloseButton: true,
+					closeButtonText: "Close Me!",
+					modalNOverlay: 'white',
 				});
 			});
     </script>
